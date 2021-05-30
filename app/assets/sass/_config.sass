@@ -1,0 +1,65 @@
+// USER VARIABLES SECTION
+
+$accent: #f58220 // Accent Color
+$dark: #222  // Dark Color
+$textcolor: #595959 // Text Color
+$fontsize: 1.6rem // Body Font Size
+$lineheight: 1.5 // Document Line Height
+$userfont: pasOpenSans, sans-serif // User Font Family
+$systemfont: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('pasOpenSans', normal, 300, '../fonts/open-sans-300.woff2')
+@include font('pasOpenSans', italic, 300, '../fonts/open-sans-300italic.woff2')
+@include font('pasOpenSans', normal, 400, '../fonts/open-sans-regular.woff2')
+@include font('pasOpenSans', italic, 400, '../fonts/open-sans-italic.woff2')
+@include font('pasOpenSans', normal, 700, '../fonts/open-sans-700.woff2')
+@include font('pasOpenSans', italic, 700, '../fonts/open-sans-700italic.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: $textcolor
+
+::selection
+	background-color: rgba(mix(white, $accent, 60%), 0.4)
+	color: inherit
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+html
+	font-size: 62.5% // для соотношения 10px = 1rem
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	font-weight: normal
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
