@@ -1,6 +1,6 @@
 {
 	"name": "mockup",
-	"version": "2.0.0",
+	"version": "2.1.0",
   "homepage": "https://github.com/llcawc",
   "license": "MIT",
   "author": "pasmurno by llcawc",
@@ -15,7 +15,7 @@
     "url": "https://github.com/llcawc/mockup.git"
   },
 	"scripts": {
-		"start": "gulp",
+		"dev": "gulp",
 		"build": "gulp build"
 	},
 	"devDependencies": {

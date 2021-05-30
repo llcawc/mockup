@@ -2,7 +2,7 @@
 // repositary: https://github.com/llcawc/mockup.git
 
 let	baseDir = "app"; // Base directory path without «/» at the end
-let distDir = "dist"; // Папка с дистрибутивом для выгрузки на сайт
+let distDir = "dist"; // Distribution folder for uploading to the site - use before "gulp build" command
 
 const { src, dest, parallel, series, watch } = require("gulp");
 const browserSync  = require("browser-sync").create();
@@ -34,8 +34,7 @@ function browsersync() {
 function html() {
   panini.refresh();
   return src(baseDir + "/*.html", {
-    base: baseDir + "/",
-  }) // Параметр "base" сохраняет структуру проекта при копировании
+    base: baseDir + "/" }) // The "base" parameter preserves the project structure when copied
     .pipe(plumber())
     .pipe(
       panini({
@@ -53,7 +52,7 @@ function html() {
 function scripts() {
   return src(
     [ `${baseDir}/assets/js/*.js`, `!${baseDir}/assets/js/*.min.js)` ], 
-    { base: `${baseDir}/assets/js/` })
+    { base: baseDir + '/assets/js/' })
     .pipe(
       plumber({
         errorHandler: function (err) {
@@ -90,7 +89,18 @@ function scripts() {
 }
 
 function styles() {
-  return src(baseDir + '/assets/sass/main.sass', { base: `${baseDir}/assets/sass/` })
+  return src(baseDir + '/assets/sass/main.sass', { base: baseDir + '/assets/sass/' })
+    .pipe(sassglob())
+    .pipe(sass())
+    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true }))
+    .pipe(cleancss({ level: { 1: { specialComments: 0 } } /*, format: 'beautify' */}))
+    .pipe(rename({ suffix: ".min", extname: ".css" }))
+    .pipe(dest(distDir + "/assets/css"))
+    .pipe(browserSync.stream());
+}
+
+function css() {
+  return src(baseDir + "/assets/sass/*.*", { base: baseDir + '/assets/sass/' })
     .pipe(
       plumber({
         errorHandler: function (err) {
@@ -104,25 +114,14 @@ function styles() {
     )
     .pipe(sassglob())
     .pipe(sass())
-    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true }))
-    .pipe(cleancss({ level: { 1: { specialComments: 0 } } /*, format: 'beautify' */}))
+    .pipe(cleancss({ level: { 1: { specialComments: 0 } }, format: 'beautify' }))
     .pipe(rename({ suffix: ".min", extname: ".css" }))
     .pipe(dest(distDir + "/assets/css"))
     .pipe(browserSync.stream());
 }
 
-function css() {
-  return src(baseDir + "/assets/sass/*.*", { base: `${baseDir}/assets/sass/` })
-    .pipe(sassglob())
-    .pipe(sass())
-    .pipe(cleancss({ level: { 1: { specialComments: 0 } }, format: 'beautify' }))
-    .pipe(rename({ extname: ".css" }))
-    .pipe(dest(baseDir + "/assets/css"))
-    .pipe(browserSync.stream());
-}
-
 function images() {
-  return src(baseDir + "/assets/src/**/*", { base: `${baseDir}/assets/src/` })
+  return src(baseDir + "/assets/src/**/*", { base: baseDir + '/assets/src/' })
     .pipe(newer(distDir + "/assets/images/"))
     .pipe(imagemin())
     .pipe(dest(distDir + "/assets/images/"))
@@ -135,12 +134,12 @@ function assetscopy() {
       baseDir + "/assets/fonts/**/*",
       baseDir + "/assets/vendor/**/*",
     ],
-    { base: baseDir + "/" } // Параметр "base" сохраняет структуру проекта при копировании
-  ).pipe(dest(distDir + "/")); // Выгружаем в папку с финальной сборкой
+    { base: baseDir + "/" }
+  ).pipe(dest(distDir + "/"));
 }
 
 function cleandist() {
-  return del(distDir + "/**/*", { force: true }); // Удаляем всё содержимое папки "dist/"
+  return del(distDir + "/**/*", { force: true });
 }
 
 function deploy() {
@@ -164,7 +163,7 @@ function deploy() {
 
 function startwatch() {
   watch( baseDir + '/**/*.html', { usePolling: true }, html );
-  watch( baseDir + '/assets/sass/**/*', { usePolling: true }, styles );
+  watch( baseDir + '/assets/sass/**/*', { usePolling: true }, css );
   watch( baseDir + '/assets/js/**/*.js', { usePolling: true	}, scripts );
   watch( baseDir + '/assets/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true	}, images );
   watch( baseDir + '/**/*.{html,htm,php,txt,json,md,woff2}', { usePolling: true }).on("change", browserSync.reload );
@@ -177,4 +176,4 @@ exports.css = css;
 exports.images = images;
 exports.deploy = deploy;
 exports.build = series(cleandist, html, scripts, styles, images, assetscopy);
-exports.default = series(cleandist, html, scripts, styles, images, assetscopy, parallel(browsersync, startwatch));
+exports.default = series(cleandist, html, scripts, css, images, assetscopy, parallel(browsersync, startwatch));

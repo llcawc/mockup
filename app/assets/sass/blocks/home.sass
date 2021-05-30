@@ -1,0 +1,49 @@
+// home.sass
+
+.image-fluid
+  width: 100%
+  display: block
+
+
+// стили для пробной галереи magnific-popup со смешанным содержимым
+// разметка кода html в app.js
+// вызов галереи из кнопки в первой карточке на первой странице
+#popup
+  position: relative
+  width: auto
+  max-width: 18rem
+  height: auto
+  margin: 2rem auto
+  padding: 3rem
+  background-color: #fff
+  text-align: center
+
+.white-popup
+  position: relative
+  background: #FFF
+  padding: 40px
+  width: auto
+  max-width: 200px
+  margin: 20px auto
+  text-align: center
+
+.gallery
+  text-align: center
+  figure
+    display: inline-block
+    width: 12rem
+    height: 12rem * 0.625
+    margin: 0.4rem
+    padding: 0.3rem
+    border-radius: 0.3rem
+    border: 1px solid #ccc
+    box-shadow: 0 2px 7px rgba(black, 0.3)
+    transition: 0.4s
+    &:hover
+      transform: scale(1.1)
+      box-shadow: 0 4px 15px rgba(black, 0.3)
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      
