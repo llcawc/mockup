@@ -1,19 +1,19 @@
 {
 	"name": "mockup",
 	"version": "2.1.0",
-  "homepage": "https://github.com/llcawc",
-  "license": "MIT",
-  "author": "pasmurno by llcawc",
+	"homepage": "https://github.com/llcawc",
+	"license": "MIT",
+	"author": "pasmurno by llcawc",
 	"description": "Mockup Template Starter by pasmurno",
-  "keywords": [
-    "mockup",
-    "template",
-    "front-end"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/llcawc/mockup.git"
-  },
+	"keywords": [
+		"mockup",
+		"template",
+		"front-end"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/llcawc/mockup.git"
+	},
 	"scripts": {
 		"dev": "gulp",
 		"build": "gulp build"
@@ -41,5 +41,10 @@
 		"jquery": "^3.6.0",
 		"panini": "^1.7.1",
 		"webpack-stream": "^6.1.2"
-	}
+	},
+	"browserslist": [
+		"last 2 version",
+		"> 1%",
+		"IE 11"
+	]
 }

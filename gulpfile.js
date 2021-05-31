@@ -1,5 +1,6 @@
 // gulpfile.js for Mockup Template Starter by pasmurno
 // repositary: https://github.com/llcawc/mockup.git
+'use strict';
 
 let	baseDir = "app"; // Base directory path without «/» at the end
 let distDir = "dist"; // Distribution folder for uploading to the site - use before "gulp build" command
@@ -33,37 +34,32 @@ function browsersync() {
 
 function html() {
   panini.refresh();
-  return src(baseDir + "/*.html", {
-    base: baseDir + "/" }) // The "base" parameter preserves the project structure when copied
+  return src(baseDir + "/*.html", { base: baseDir + "/" })
     .pipe(plumber())
-    .pipe(
-      panini({
-        root: baseDir + "/",
-        layouts: baseDir + "/layouts/",
-        partials: baseDir + "/partials/",
-        helpers: baseDir + "/helpers/",
-        data: baseDir + "/data/",
-      })
-    )
+    .pipe(panini({
+      root:     baseDir + "/",
+      layouts:  baseDir + "/layouts/",
+      partials: baseDir + "/partials/",
+      helpers:  baseDir + "/helpers/",
+      data:     baseDir + "/data/",
+    }))
     .pipe(dest(distDir + "/"))
     .pipe(browserSync.stream());
 }
 
 function scripts() {
   return src(
-    [ `${baseDir}/assets/js/*.js`, `!${baseDir}/assets/js/*.min.js)` ], 
+    [ `${baseDir}/assets/js/*.js`, `!${baseDir}/assets/js/*.min.js)` ],
     { base: baseDir + '/assets/js/' })
-    .pipe(
-      plumber({
-        errorHandler: function (err) {
-          notify.onError({
-            title: "JS Error",
-            message: "Error: <%= error.message %>",
-          })(err);
-          this.emit("end");
-        },
-      })
-    )
+    .pipe(plumber({
+      errorHandler: function (err) {
+        notify.onError({
+          title: "JS Error",
+          message: "Error: <%= error.message %>",
+        })(err);
+        this.emit("end");
+      },
+    }))
     .pipe(webpack({
       mode: "production",
       performance: {
@@ -91,7 +87,7 @@ function scripts() {
 function styles() {
   return src(baseDir + '/assets/sass/main.sass', { base: baseDir + '/assets/sass/' })
     .pipe(sassglob())
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true }))
     .pipe(cleancss({ level: { 1: { specialComments: 0 } } /*, format: 'beautify' */}))
     .pipe(rename({ suffix: ".min", extname: ".css" }))
@@ -121,9 +117,14 @@ function css() {
 }
 
 function images() {
-  return src(baseDir + "/assets/src/**/*", { base: baseDir + '/assets/src/' })
+  return src(baseDir + "/assets/src/**/*", { base: baseDir + "/assets/src/" })
     .pipe(newer(distDir + "/assets/images/"))
-    .pipe(imagemin())
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 95, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({plugins: [{removeViewBox: true}, {cleanupIDs: false}]})
+    ], {verbose: "true",}))
     .pipe(dest(distDir + "/assets/images/"))
     .pipe(browserSync.stream());
 }
