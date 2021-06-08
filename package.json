@@ -24,7 +24,6 @@
 		"babel-loader": "^8.2.2",
 		"babel-plugin-module-resolver": "^4.1.0",
 		"babel-plugin-root-import": "^6.6.0",
-		"bootstrap": "^5.0.1",
 		"browser-sync": "^2.26.14",
 		"del": "^6.0.0",
 		"gulp": "^4.0.2",
@@ -38,7 +37,6 @@
 		"gulp-rsync": "0.0.9",
 		"gulp-sass": "^4.1.0",
 		"gulp-sass-glob": "^1.1.0",
-		"jquery": "^3.6.0",
 		"panini": "^1.7.1",
 		"webpack-stream": "^6.1.2"
 	},
@@ -46,5 +44,9 @@
 		"last 2 version",
 		"> 1%",
 		"IE 11"
-	]
+	],
+	"dependencies": {
+    "bootstrap": "^5.0.1",
+    "jquery": "^3.6.0"
+	}
 }

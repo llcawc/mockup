@@ -1,17 +1,52 @@
-// USER VARIABLES SECTION
 // _config.sass
+// USER VARIABLES SECTION
 
-// Bootstrap compatible variable
-$grid-gutter-width: 3rem // 30px
-$gutter: $grid-gutter-width
-$spacer: 3.2rem // 32px
+$accent: #f58220 // Accent Color
+$dark: #222  // Dark Color
+$textcolor: #595959 // Text Color
+$fontsize: 1rem // 16px
+$lineheight: 1.5 // 24px Document Line Height
+$userfont: pasOpenSans, sans-serif // User Font Family
+$systemfont: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
 
 // IMPORT SECTION
 
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'
-@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'
-@import 'node_modules/bootstrap/scss/bootstrap-utilities.scss'
+// BOOTSTRAP
 
+// Вариант А: Включите весь Bootstrap
+// Включите сюда ниже любые переопределения переменных по умолчанию (хотя функции будут недоступны)
+
+// Подключение всех таблиц стилей Bootstrap
+// @import "node_modules/bootstrap/scss/bootstrap"
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'
+// @import 'node_modules/bootstrap/scss/bootstrap-utilities.scss'
+
+// Вариант Б. Включите части Bootstrap
+// 1. Сначала включите функции (чтобы Вы могли управлять цветами, SVG, вычислением и т.д.)
+@import "node_modules/bootstrap/scss/functions"
+
+// 2. Включите сюда любые переопределения переменных по умолчанию
+$grid-gutter-width: 1.875rem // 30px
+$gutter: $grid-gutter-width
+$spacer: 2rem // 32px
+
+// 3. Включите оставшуюся часть необходимых таблиц стилей Bootstrap
+@import "node_modules/bootstrap/scss/variables"
+@import "node_modules/bootstrap/scss/mixins"
+
+// 4. Включите любые дополнительные компоненты Bootstrap, как Вам нравится
+// @import "node_modules/bootstrap/scss/root"
+@import "node_modules/bootstrap/scss/reboot"
+@import "node_modules/bootstrap/scss/type"
+@import "node_modules/bootstrap/scss/images"
+@import "node_modules/bootstrap/scss/containers"
+@import "node_modules/bootstrap/scss/grid"
+@import "node_modules/bootstrap/scss/utilities"
+@import "node_modules/bootstrap/scss/utilities/api"
+@import "node_modules/bootstrap/scss/helpers"
+
+// Require vendor files
 @import '../vendor/magnific-popup/main.scss'
 
 // FONTS LOAD SECTION
@@ -29,3 +64,113 @@ $spacer: 3.2rem // 32px
 @include font('pasOpenSans', italic, 400, '../fonts/open-sans-italic.woff2')
 @include font('pasOpenSans', normal, 700, '../fonts/open-sans-700.woff2')
 @include font('pasOpenSans', italic, 700, '../fonts/open-sans-700italic.woff2')
+
+// GENERAL PROJECT STYLES
+
+::placeholder
+	color: $textcolor
+
+::selection
+	background-color: rgba(mix(white, $accent, 60%), 0.4)
+	color: inherit
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont // $systemfont //
+	font-size: $fontsize
+	font-weight: normal
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 700
+
+.section
+  text-align: center
+  margin: $gutter auto
+  padding: $gutter/2 0
+  background-color: #eee
+
+.btn
+  display: inline-block
+  background-color: transparent
+  padding: $spacer/4 $spacer/2
+  border: 1px solid transparent
+  border-radius: 0.375rem
+  outline: transparent
+
+.btn-primary
+  color: white
+  background-color: #0d6efd
+  border-color: #0d6efd
+  transition: 0.15s ease-in-out
+  &:hover
+    background-color: #0a58ca
+  &:focus
+    box-shadow: 0 0 0 0.25rem rgba(#0d6efd, 0.4)
+
+
+// --- Button to top scroll  --------
+$bott: 90px // bottom gap button
+$righ: 20px // left gap button
+
+#scrolltotop
+  position: fixed
+  background-color: rgba($accent, 0.5)
+  opacity: 0
+  transition: background-color 0.4s, box-shadow 0.4s, opacity 1.2s ease
+  bottom: $bott
+  right: $righ
+  width: 40px
+  height: 40px
+  border-radius: 4px
+  z-index: 199
+  svg
+    stroke: #fff
+    width: 24px
+    height: 24px
+    margin: (40px - 24px) / 2
+  &:hover
+    background-color: $accent
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3)
+  &:active
+    transform: scale(0.95)
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3)
+  &.on
+    opacity: 1 !important
+    animation: up 1.2s ease
+    cursor: pointer
+  &.down
+    animation: down 1.2s ease
+
+@keyframes up
+  0%
+    bottom: 0px
+  30%
+    bottom: $bott
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+@keyframes down
+  0%
+    transform: rotate(0deg)
+    opacity: 1
+  70%
+    opacity: 1
+    bottom: $bott
+    transform: rotate(-360deg)
+  100%
+    opacity: 0
+    bottom: 0px
+    transform: rotate(-360deg)
+// --- END button to top scroll ---
