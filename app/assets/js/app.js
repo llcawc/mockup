@@ -1,11 +1,28 @@
 // Import jQuery module (npm i jquery)
-import $ from "jquery";
-window.jQuery = $;
-window.$ = $;
+import $ from "jquery"; window.jQuery = $; window.$ = $;
 
 // Import vendor jQuery plugin (not module)
-require("~/app/assets/vendor/magnific-popup/jquery.magnific-popup.js");
+require("~/app/assets/vendor/magnific-popup/jquery.magnific-popup.js"); // Require vendor jQuery plugin (not module)
+// require('~/node_modules/bootstrap/dist/js/bootstrap.bundle.js'); // Require Bootstrap as not module
 
+// Import Bootstrap as module
+// import { Tooltip, Toast, Popover } from 'bootstrap'; // before require popper to package (npm install @popperjs/core)
+
+// import 'bootstrap/js/dist/alert';
+// import 'bootstrap/js/dist/button';
+// import 'bootstrap/js/dist/carousel';
+import 'bootstrap/js/dist/collapse';
+// import 'bootstrap/js/dist/dropdown';
+// import 'bootstrap/js/dist/modal';
+// import 'bootstrap/js/dist/popover'; // require from popper (npm install @popperjs/core)
+// import 'bootstrap/js/dist/scrollspy';
+// import 'bootstrap/js/dist/tab';
+// import 'bootstrap/js/dist/toast';  // require from popper
+// import 'bootstrap/js/dist/tooltip';// require from popper
+
+// Sample USE Bootstrap module
+// import Modal from 'bootstrap/js/dist/modal'
+// const modal = new Modal(document.getElementById('myModal'))
 
 
 // -------- Back to top button ------
@@ -133,7 +150,7 @@ $(document).ready(function () {
   });
 
   // -------- jQuery: add-remove class ------------
-  
+
   // $(".view-img").hover(function () {
   //   $(this).toggleClass("shadow");
   // });

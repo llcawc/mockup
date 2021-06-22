@@ -1,6 +1,6 @@
 {
 	"name": "mockup",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"homepage": "https://github.com/llcawc",
 	"license": "MIT",
 	"author": "pasmurno by llcawc",
@@ -19,8 +19,8 @@
 		"build": "gulp build"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.14.3",
-		"@babel/preset-env": "^7.14.4",
+		"@babel/core": "^7.14.6",
+		"@babel/preset-env": "^7.14.7",
 		"babel-loader": "^8.2.2",
 		"babel-plugin-module-resolver": "^4.1.0",
 		"babel-plugin-root-import": "^6.6.0",
@@ -37,6 +37,7 @@
 		"gulp-rsync": "0.0.9",
 		"gulp-sass": "^4.1.0",
 		"gulp-sass-glob": "^1.1.0",
+		"gulp-sourcemaps": "^3.0.0",
 		"panini": "^1.7.1",
 		"webpack-stream": "^6.1.2"
 	},
@@ -46,7 +47,8 @@
 		"IE 11"
 	],
 	"dependencies": {
-    "bootstrap": "^5.0.1",
-    "jquery": "^3.6.0"
+		"@popperjs/core": "^2.9.2",
+		"bootstrap": "^5.0.1",
+		"jquery": "^3.6.0"
 	}
 }
