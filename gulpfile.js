@@ -53,7 +53,7 @@ let paths = {
 const { src, dest, parallel, series, watch } = require("gulp");
 const browserSync  = require("browser-sync").create();
 const webpack      = require("webpack-stream");
-const sass         = require("gulp-sass");
+const sass         = require("gulp-sass")(require("sass"));
 const sassglob     = require("gulp-sass-glob");
 const plumber      = require("gulp-plumber");
 const cleancss     = require("gulp-clean-css");
@@ -138,7 +138,7 @@ function css() {
       },
     }))
     .pipe(sassglob())
-    .pipe(sass())
+    .pipe(sass.sync())
     .pipe(cleancss({ level: {1: {specialComments: 0 }}, format: 'beautify' }))
     .pipe(rename(paths.cssOutputName))
     .pipe(sourcemaps.write('.'))
@@ -149,7 +149,7 @@ function css() {
 function styles() {
   return src(paths.styles.src)
     .pipe(sassglob())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true }))
     .pipe(cleancss({ level: {1: {specialComments: 0 }} /*, format: 'beautify' */ }))
     .pipe(rename(paths.cssOutputName))
