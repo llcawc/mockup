@@ -1,6 +1,6 @@
 # Mockup
 
-*Revision 2.3.0 от 27.06.2021*
+*Revision 2.3.1 от 15.07.2021*
 
 >Starter template for a multi-page site.<br>
 FrontEnd based on layouts and partials. HTML5. SASS/SCSS. Gulp. Webpack and module JS.

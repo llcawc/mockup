@@ -1,0 +1,27 @@
+// BOOTSTRAP ICON FONTS LOAD SECTION
+// @import 'themes/caffee/assets/vendor/bootstrap-icons/bootstrap-icons'
+
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("../vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d") format("woff2"),
+  url("../vendor/bootstrap-icons/fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d") format("woff");
+}
+
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Добавте сюда нужные записи из исходного файла
+.bi-person-circle::before { content: "\f4d7"; }
+.bi-eye-fill::before { content: "\f33e"; }
+.bi-eye::before { content: "\f341"; }
