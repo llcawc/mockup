@@ -236,7 +236,7 @@ const dataoptions = {
   dataSource: [
     // simple image
     {
-      src: 'assets/images/b3.webp',
+      src: 'assets/images/b3.jpg',
       w: 1920,
       h: 1200,
       alt: 'test image',

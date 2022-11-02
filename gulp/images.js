@@ -5,8 +5,9 @@ const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
 let paths = {
   images: {
-    webp: baseDir + '/assets/images/**/*.{jpg,png,JPG,PNG}',
-    svg: baseDir + '/assets/images/**/*.{svg,SVG}',
+    src: baseDir + '/assets/images/**/*.{jpg,png,gif}',
+    svg: baseDir + '/assets/images/**/*.svg',
+    webp: distDir + '/assets/images/webp',
     dest: distDir,
   },
 }
@@ -14,29 +15,36 @@ let paths = {
 // require
 import gulp from 'gulp'
 const { src, dest, parallel, series } = gulp
-import imagemin from 'gulp-imagemin'
+import imagemin, { mozjpeg } from 'gulp-imagemin'
 import imageminWebp from 'imagemin-webp'
 import imageminSvgo from 'imagemin-svgo'
 import changed from 'gulp-changed'
 import rename from 'gulp-rename'
 
 // task
-function makewebp() {
-  return src(paths.images.webp, { base: baseDir + '/' })
-    .pipe(imagemin([imageminWebp({ quality: 50 })], { verbose: 'true' }))
-    .pipe(rename({ extname: '.webp' }))
+function makeimg() {
+  return src(paths.images.src, { base: baseDir })
+    .pipe(changed(paths.images.dest))
+    .pipe(imagemin([mozjpeg({quality: 75, progressive: true})], { verbose: 'true' }))
     .pipe(dest(paths.images.dest))
 }
 function makesvg() {
-  return src(paths.images.svg, { base: baseDir + '/' })
-    .pipe(changed(paths.images.dest))
-    .pipe(imagemin([
-        imageminSvgo({
-          plugins: [{ name: 'preset-default', params: { overrides: { removeViewBox: false } } }]
-        })
-      ], { verbose: true }))
-    .pipe(dest(paths.images.dest))
+  return src(paths.images.svg, { base: baseDir })
+  .pipe(changed(paths.images.dest))
+  .pipe(imagemin([
+    imageminSvgo({
+      plugins: [{ name: 'preset-default', params: { overrides: { removeViewBox: false } } }]
+    })
+  ], { verbose: true }))
+  .pipe(dest(paths.images.dest))
+}
+function makewebp() {
+  return src(paths.images.src, { base: baseDir + '/assets/images'})
+    .pipe(imagemin([imageminWebp({ quality: 50 })], { verbose: 'true' }))
+    .pipe(rename({ extname: '.webp' }))
+    .pipe(dest(paths.images.webp))
 }
 
 // export
-export let images = series(makesvg, makewebp)
+let images = series(makeimg, makesvg)
+export { images, makewebp }

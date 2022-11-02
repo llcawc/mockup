@@ -10,14 +10,18 @@ let paths = {
     base: baseDir,
   },
   bif: {
-    src: baseDir + '/assets/vendor/bootstrap-icons/font/fonts/**/*',
+    src: 'node_modules/bootstrap-icons/font/fonts/**/*',
     dest: distDir + '/assets/fonts/bootstrap-icons',
   },
   del: {
-    src: [
-      distDir,
-      // '!' + distDir + '/assets/images/**/*.{webp,svg}',
+    code: [
+      distDir + '/**',
+      distDir + '/assets/**',
+      '!' + distDir + '/assets',
+      '!' + distDir + '/assets/images',
+      '!' + distDir + '/assets/images/*.{jpg,png,svg,webp}',
     ],
+    all: [ distDir ],
   },
 }
 
@@ -34,9 +38,12 @@ function bifcopy() {
   return src(paths.bif.src).pipe(dest(paths.bif.dest))
 }
 function clean() {
-  return del(paths.del.src, { force: true })
+  return del(paths.del.code)
+}
+function cleanall() {
+  return del(paths.del.all)
 }
 
 // export
 let assetscopy = series(assets, bifcopy)
-export { assetscopy, clean }
+export { assetscopy, clean, cleanall }

@@ -11,10 +11,10 @@ const { parallel, series, watch } = gulp
 import browsersync from 'browser-sync'
 import { html, htmlmin } from './gulp/html.js'
 import { deploy } from './gulp/deploy.js'
-import { images } from './gulp/images.js'
+import { images, makewebp } from './gulp/images.js'
 import { styles } from './gulp/styles.js'
 import { scripts } from './gulp/scripts.js'
-import { clean, assetscopy } from './gulp/assets.js'
+import { clean, cleanall, assetscopy } from './gulp/assets.js'
 
 //  server reload task
 function browserSync() {
@@ -47,7 +47,7 @@ function watchstart() {
 }
 
 // export
-export { html, htmlmin, clean, assetscopy, styles, scripts, images, deploy }
+export { html, htmlmin, clean, cleanall, assetscopy, styles, scripts, images, makewebp, deploy }
 export let assets = series(html, assetscopy, styles, scripts)
 export let serve = parallel(browserSync, watchstart)
 export let dev = series(clean, images, assets, serve)
