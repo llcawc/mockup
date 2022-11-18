@@ -19,12 +19,10 @@ import { clean, cleanall, assetscopy } from './gulp/assets.js'
 //  server reload task
 function browserSync() {
   browsersync.init({
-    files: [distDir + '/**/*'],
-    watch: true,
-    notify: false,
     server: { baseDir: distDir },
+    files: [distDir + '/**/*'],
+    notify: false,
     online: true,
-    browser: ['firefox'], // or 'chrome', 'msedge', 'opera'
     callbacks: {
       ready: function(err, bs) {
         // adding a middleware of the stack after Browsersync is running

@@ -14,7 +14,7 @@ let paths = {
     dest: distDir + '/assets/fonts/bootstrap-icons',
   },
   del: {
-    code: [
+    src: [
       distDir + '/**',
       distDir + '/assets/**',
       '!' + distDir + '/assets',
@@ -38,7 +38,7 @@ function bifcopy() {
   return src(paths.bif.src).pipe(dest(paths.bif.dest))
 }
 function clean() {
-  return del(paths.del.code)
+  return del(paths.del.src)
 }
 function cleanall() {
   return del(paths.del.all)
