@@ -1,18 +1,17 @@
 // html.js
 
-// variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
-let html = ()=>{}
-
 // import modules
-import { env } from 'process'
+import { env } from 'node:process'
 import gulp from 'gulp'
-const { src, dest, series } = gulp
+const { src, dest, parallel, series, watch } = gulp
 import nunjucks from 'gulp-nunjucks'
 import prettier from 'gulp-prettier'
 import minify from 'gulp-htmlmin'
 import chalk from 'chalk'
+
+// variables & path
+const baseDir = 'src' // Base directory path without «/» at the end
+const distDir = 'dist' // Distribution folder for uploading to the site
 
 // html assembly task
 function assemble() {
@@ -31,10 +30,5 @@ function htmlmin() {
     .pipe(dest(distDir + '/'))
 }
 
-if (env.BUILD === 'production') {
-  html = series( assemble, htmlmin)
-} else {
-  html = assemble
-}
-
+const html = env.BUILD === 'production' ? series( assemble, htmlmin) : assemble
 export { html, htmlmin}

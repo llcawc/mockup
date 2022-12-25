@@ -1,4 +1,9 @@
-// assets.mjs
+// assets.js
+
+// require
+import gulp from 'gulp'
+const { src, dest, parallel, series, watch } = gulp
+import { deleteAsync as del } from 'del'
 
 // variables & paths
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -24,11 +29,6 @@ let paths = {
     all: [ distDir ],
   },
 }
-
-// require
-import gulp from 'gulp'
-const { src, dest, parallel, series, watch } = gulp
-import { deleteAsync as del } from 'del'
 
 // tasks
 function assets() {

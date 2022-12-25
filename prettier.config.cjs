@@ -1,4 +1,4 @@
-// prettier.config.cjs
+// prettier.config.js
 // https://prettier.io/docs/en/configuration.html
 
 module.exports = {
@@ -12,12 +12,5 @@ module.exports = {
   printWidth: 120, // default: 80
   trailingComma: 'es5',
   bracketSpacing: true,
-  overrides: [
-    {
-      files: ['*.js', '*.cjs', '*.mjs'],
-      options: {
-        parser: 'flow',
-      },
-    },
-  ],
+  overrides: [{ files: ['*.js', '*.cjs', '*.mjs'], options: {parser: 'flow'} }],
 }
