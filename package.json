@@ -1,7 +1,7 @@
 {
   "name": "mockup-starter",
   "version": "0.0.5",
-  "date": "2022.12.25",
+  "date": "2023.01.05",
   "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
@@ -28,7 +28,7 @@
     "arc": "rsync -aP --delete --exclude=node_modules --exclude=Thumbs.db --exclude=.DS_Store ./ /mnt/d/Coding/breadboard/mockup/"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.0",
@@ -46,16 +46,17 @@
     "gulp-prettier": "^4.0.0",
     "gulp-purgecss": "^5.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-rsync": "0.0.9",
+    "gulp-rsync": "0.1.0",
     "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
     "postcss": "^8.4.20",
-    "rollup": "^3.8.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.57.1"
+    "rollup": "^3.9.1",
+    "sass": "^1.57.1",
+    "terser": "^5.16.1"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.2",
+    "bootstrap-icons": "^1.10.3",
     "jquery": "^3.6.3",
     "photoswipe": "^5.3.4",
     "shufflejs": "^6.1.0"
