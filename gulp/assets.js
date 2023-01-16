@@ -6,44 +6,38 @@ const { src, dest, parallel, series, watch } = gulp
 import { deleteAsync as del } from 'del'
 
 // variables & paths
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
+const baseDir = 'src'
+const distDir = 'dist'
 let paths = {
   copy: {
-    src: [baseDir + '/assets/fonts/**/*'],
+    src:  baseDir + '/assets/fonts/**/*',
     dest: distDir,
     base: baseDir,
   },
-  bif: {
+  bi: {
     src: 'node_modules/bootstrap-icons/font/fonts/**/*',
     dest: distDir + '/assets/fonts/bootstrap-icons',
   },
-  del: {
-    src: [
-      distDir + '/**',
-      distDir + '/assets/**',
-      '!' + distDir + '/assets',
-      '!' + distDir + '/assets/images',
-      '!' + distDir + '/assets/images/*.{jpg,png,svg,webp}',
-    ],
-    all: [ distDir ],
-  },
+  del: [
+    distDir + '/*',
+    distDir + '/assets/*',
+    '!' + distDir + '/assets',
+    '!' + distDir + '/assets/images',
+    '!' + distDir + '/assets/images/*.{jpg,png,svg}',
+  ],
 }
 
 // tasks
 function assets() {
   return src(paths.copy.src, { base: paths.copy.base }).pipe(dest(paths.copy.dest))
 }
-function bifcopy() {
-  return src(paths.bif.src).pipe(dest(paths.bif.dest))
+function bicopy() {
+  return src(paths.bi.src).pipe(dest(paths.bi.dest))
 }
 function clean() {
-  return del(paths.del.src)
-}
-function cleanall() {
-  return del(paths.del.all)
+  return del(paths.del)
 }
 
 // export
-let assetscopy = series(assets, bifcopy)
-export { assetscopy, clean, cleanall }
+let assetscopy = series(assets, bicopy)
+export { clean, assetscopy }

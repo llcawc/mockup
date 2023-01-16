@@ -108,6 +108,7 @@ progress {}
 .col-4 {}
 .col-6 {}
 .col-7 {}
+.col-8 {}
 .col-10 {}
 .col-11 {}
 .offset-1 {}
@@ -164,7 +165,6 @@ progress {}
 .col-sm-2 {}
 .col-sm-3 {}
 .col-sm-4 {}
-.col-sm-5 {}
 .col-sm-6 {}
 .col-sm-7 {}
 .col-sm-8 {}
@@ -227,6 +227,7 @@ progress {}
 .col-md-3 {}
 .col-md-4 {}
 .col-md-5 {}
+.col-md-6 {}
 .col-md-7 {}
 .col-md-8 {}
 .col-md-9 {}
@@ -672,7 +673,6 @@ progress {}
 .d-table {}
 .d-table-row {}
 .d-table-cell {}
-.d-inline-flex {}
 .shadow-sm {}
 .shadow-lg {}
 .shadow-none {}
@@ -736,7 +736,6 @@ progress {}
 .h-75 {}
 .h-auto {}
 .mh-100 {}
-.vh-100 {}
 .min-vh-100 {}
 .flex-fill {}
 .flex-row {}
@@ -753,11 +752,11 @@ progress {}
 .justify-content-evenly {}
 .align-items-start {}
 .align-items-end {}
-.align-items-center {}
 .align-items-baseline {}
 .align-items-stretch {}
 .align-content-start {}
 .align-content-end {}
+.align-content-center {}
 .align-content-between {}
 .align-content-around {}
 .align-content-stretch {}
@@ -808,7 +807,6 @@ progress {}
 .me-5 {}
 .me-auto {}
 .mb-1 {}
-.mb-2 {}
 .mb-4 {}
 .mb-auto {}
 .ms-0 {}
@@ -854,7 +852,6 @@ progress {}
 .ps-5 {}
 .gap-0 {}
 .gap-1 {}
-.gap-2 {}
 .gap-4 {}
 .gap-5 {}
 .font-monospace {}

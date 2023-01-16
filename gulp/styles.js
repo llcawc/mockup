@@ -1,7 +1,7 @@
 // styles.js
 
 // import modules
-import { env } from 'node:process'
+import { env } from 'process'
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import sassDark from 'sass'
@@ -12,20 +12,17 @@ import postCss from 'gulp-postcss'
 import cssnano from 'cssnano'
 import autoprefixer from 'autoprefixer'
 import rename from 'gulp-rename'
-import chalk from 'chalk'
 
 // variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
+const baseDir = 'src'
+const distDir = 'dist'
 let paths = {
-  styles: {
-    src: [
-      baseDir + '/assets/sass/main.*',
-      baseDir + '/assets/sass/fonts.*',
-    ],
-    dest: distDir + '/assets/css',
-    reject: baseDir + '/assets/css',
-  },
+  src: [
+    baseDir + '/assets/sass/main.*',
+    baseDir + '/assets/sass/fonts.*',
+  ],
+  dest:   distDir + '/assets/css',
+  reject: baseDir + '/assets/css',
   purge: {
     content: [
       `${baseDir}/**/*.{html,htm,njk}`,
@@ -47,38 +44,34 @@ let paths = {
 }
 
 // task
-export function styles() {
+function cssbau() {
   if (env.BUILD === 'production') {
-    console.log(chalk.green('CSS build for production is running OK!'))
-    return src(paths.styles.src)
+    return src(paths.src)
       .pipe(sass.sync())
       .pipe(purgecss(paths.purge))
-      .pipe(
-        postCss([
-          autoprefixer(),
-          cssnano({
-            preset: ['default', { discardComments: { removeAll: true } }],
-          }),
-        ])
-      )
+      .pipe(postCss([
+        autoprefixer(),
+        cssnano({ preset: ['default', { discardComments: { removeAll: true } }], }),
+      ]))
       .pipe(rename({suffix: '.min'}))
-      .pipe(dest(paths.styles.dest))
+      .pipe(dest(paths.dest))
   } else {
-    console.log(chalk.magenta('CSS developments is running OK!'))
-    return src(paths.styles.src, { sourcemaps: true })
+    return src(paths.src, { sourcemaps: true })
       .pipe(sass.sync().on('error', sass.logError))
       .pipe(rename({suffix: '.min'}))
-      .pipe(dest(paths.styles.dest, { sourcemaps: '.' }))
+      .pipe(dest(paths.dest, { sourcemaps: '.' }))
   }
 }
 
-
 // task view rejected styles
-export function reject() {
+function reject() {
   paths.purge.rejected = true
-  return src(paths.styles.src)
+  return src(paths.src)
     .pipe(sass.sync())
     .pipe(purgecss(paths.purge))
     .pipe(rename({suffix: '.rejected'}))
-    .pipe(dest(paths.styles.reject))
+    .pipe(dest(paths.reject))
 }
+
+// export
+export let styles = series( cssbau, reject )

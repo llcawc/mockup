@@ -1,7 +1,7 @@
 // scripts.js
 
 // import modules
-import { env } from 'node:process'
+import { env } from 'process'
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import { rollup } from 'rollup'
@@ -12,8 +12,8 @@ import { minify } from "terser"
 import gulpTerser from "gulp-terser"
 
 // variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
+const baseDir = 'src'
+const distDir = 'dist'
 let paths = {
   src:  baseDir + '/assets/scripts/main.js',
   min:  distDir + '/assets/js/main.min.js',

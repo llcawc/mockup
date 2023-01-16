@@ -1,15 +1,14 @@
-// gulpfile.js
+// gulpfile.js • mockup • pasmurno by llcawc • https://github.com/llcawc
 
 // import modules & requires
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import browsersync from 'browser-sync'
-import { html, htmlmin } from './gulp/html.js'
-import { deploy } from './gulp/deploy.js'
+import { htmlbau } from './gulp/htmlbau.js'
 import { images } from './gulp/images.js'
-import { styles, reject } from './gulp/styles.js'
+import { styles } from './gulp/styles.js'
 import { scripts } from './gulp/scripts.js'
-import { clean, cleanall, assetscopy } from './gulp/assets.js'
+import { clean, assetscopy } from './gulp/assets.js'
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -27,17 +26,17 @@ function browserSync() {
 }
 
 // watch task
-function watchstart() {
-  watch(`./${baseDir}/**/*.{html,htm,njk}`, { usePolling: true }, html)
+function watchDev() {
+  watch(`./${baseDir}/**/*.html`, { usePolling: true }, htmlbau)
   watch(`./${baseDir}/assets/scripts/**/*.{js,mjs,cjs}`, { usePolling: true }, scripts)
-  watch(`./${baseDir}/assets/sass/**/*.{scss,sass,css,pcss}`, { usePolling: true }, styles)
+  watch(`./${baseDir}/assets/sass/**/*.{scss,sass,css}`, { usePolling: true }, styles)
   watch(`./${baseDir}/assets/images/**/*.{jpg,png,svg}`, { usePolling: true }, images)
   watch(`./${distDir}/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browsersync.reload)
 }
 
 // export
-export { html, htmlmin, clean, cleanall, assetscopy, styles, reject, scripts, images, deploy }
-export let assets = series(html, assetscopy, styles, scripts)
-export let serve = parallel(browserSync, watchstart)
+export { htmlbau, clean, assetscopy, styles, scripts, images }
+export let assets = series(htmlbau, assetscopy, styles, scripts)
+export let serve = parallel(browserSync, watchDev)
 export let dev = series(clean, images, assets, serve)
 export let build = series(clean, images, assets)

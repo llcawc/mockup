@@ -7,19 +7,20 @@ import imagemin from 'gulp-imagemin'
 import changed from 'gulp-changed'
 
 // variables & patch
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
+const baseDir = 'src'
+const distDir = 'dist'
 let paths = {
-  images: {
-    src: baseDir + '/assets/images/**/*.{jpg,png,svg}',
-    dest: distDir,
-  },
+  src:  baseDir + '/assets/images/**/*.{jpg,png,svg}',
+  dest: distDir,
 }
 
-// task
-export function images() {
-  return src(paths.images.src, { base: baseDir })
-    .pipe(changed(paths.images.dest))
+// images resize task
+function images() {
+  return src(paths.src, { base: baseDir })
+    .pipe(changed(paths.dest))
     .pipe(imagemin({ verbose: 'true' }))
-    .pipe(dest(paths.images.dest))
+    .pipe(dest(paths.dest))
 }
+
+// export
+export { images }
