@@ -25,15 +25,13 @@ let paths = {
   reject: baseDir + '/assets/css',
   purge: {
     content: [
-      `${baseDir}/**/*.{html,htm,njk}`,
-      `${baseDir}/assets/scripts/**/*.js`,
-      `${baseDir}/assets/sass/blocks/_pswp.scss`,
+      baseDir + '/**/*.html',
+      baseDir + '/assets/scripts/**/*.js',
+      baseDir + '/assets/sass/blocks/_pswp.scss',
       'node_modules/bootstrap/js/dist/dom/*.js',
       'node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js',
     ],
-    css: [
-      'node_modules/bootstrap/scss/_reboot.scss',
-    ],
+    // css: [],
     safelist: {
       // standart: ["selectorname"],
       deep: [/scrolltotop$/],
