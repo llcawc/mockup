@@ -1,8 +1,9 @@
----
-layout: default
-title: Home
-pageheader: Mockup Template
----
+{# index.htm #}
+{% extends "layouts/default.htm" %}
+{% set title = "Home" %}
+{% set pageheader = "Mockup Template" %}
+{# ••• #}
+{% block main %}
 <main class="container-md">
 
   <div class="row mb-5">
@@ -68,3 +69,5 @@ pageheader: Mockup Template
   </div>
 
 </main>
+{% endblock %}
+{# end index.htm #}

@@ -1,8 +1,9 @@
----
-layout: default
-title: Contacts
-pageheader: CONTACTS
----
+{# contacts.htm #}
+{% extends "layouts/default.htm" %}
+{% set title = "Contacts" %}
+{% set pageheader = "CONTACTS" %}
+{# ••• #}
+{% block main %}
 <main class="container-md mb-3">
   <div class="row row-cols-2 pt-5 pb-4">
     <div class="col-3 col-lg-4 text-end"></div>
@@ -29,3 +30,5 @@ pageheader: CONTACTS
     </div>
   </div>
 </main>
+{% endblock %}
+{# end contacts.htm #}

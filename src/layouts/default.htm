@@ -13,21 +13,23 @@
 </head>
 
 <body>
-  {{#unlesspage '404'}}
+  {% if title !== '404' %}
   <div class="grid">
     <!-- header -->
-    {{> header}}
-  {{/unlesspage}}
+    {% include "includes/header.htm" %}
+  {% endif %}
     <!-- main -->
-    {{> body}}
-  {{#unlesspage '404'}}
+    {% block main %}
+    This is the default main content
+    {% endblock %}
+  {% if title !== '404' %}
     <!-- footer -->
-    {{> footer}}
+    {% include "includes/footer.htm" %}
   </div>
-    {{> popshare}}
-    {{> pswshare}}
-  <!-- script -->
-  <script src="assets/js/main.min.js"></script>
-  {{/unlesspage}}
+    {% include "includes/popshare.htm" %}
+    {% include "includes/pswshare.htm" %}
+    <!-- scripts -->
+    <script src="assets/js/main.min.js"></script>
+  {% endif %}
 </body>
 </html>

@@ -25,7 +25,7 @@ let paths = {
   reject: baseDir + '/assets/css',
   purge: {
     content: [
-      baseDir + '/**/*.html',
+      baseDir + '/**/*.{html,htm,njk}',
       baseDir + '/assets/scripts/**/*.js',
       baseDir + '/assets/sass/blocks/_pswp.scss',
       'node_modules/bootstrap/js/dist/dom/*.js',

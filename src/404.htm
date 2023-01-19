@@ -1,8 +1,9 @@
----
-layout: default
-title: 404
-pageheader: Error 404
----
+{# 404.htm #}
+{% extends "layouts/default.htm" %}
+{% set title = "404" %}
+{% set pageheader = "Error 404" %}
+{# ••• #}
+{% block main %}
 <div class="container-md vh-100">
   <div class="row h-100 align-items-center justify-content-center">
     <section class="col-9 col-sm-5 d-inline-flex gap-2">
@@ -15,3 +16,4 @@ pageheader: Error 404
     </section>
   </div>
 </div>
+{% endblock %}

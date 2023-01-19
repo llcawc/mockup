@@ -1,8 +1,9 @@
----
-layout: default
-title: Blog
-pageheader: BLOG
----
+{# blog.htm #}
+{% extends "layouts/default.htm" %}
+{% set title = "Blog" %}
+{% set pageheader = "BLOG" %}
+{# ••• #}
+{% block main %}
 <main class="container-md">
   <div class="row">
     <section class="col-sm-12 mt-5 mb-3">
@@ -79,3 +80,5 @@ pageheader: BLOG
     </section>
   </div>
 </main>
+{% endblock %}
+{# end blog.htm #}
