@@ -13,13 +13,13 @@
     "images": "gulp images",
     "del": "gulp clean",
     "build": "BUILD=production gulp build && npm run arc",
-    "arc": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/breadboard/mockup/"
+    "arc": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/mockup/"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "autoprefixer": "^10.4.13",
     "browser-sync": "^2.27.11",
@@ -39,7 +39,7 @@
     "imagemin-webp": "^7.0.0",
     "gulp-terser": "^2.1.0",
     "postcss": "^8.4.21",
-    "rollup": "^3.10.0",
+    "rollup": "^3.10.1",
     "sass": "^1.57.1",
     "terser": "^5.16.1"
   },
