@@ -16,7 +16,7 @@
   {% if title !== '404' %}
   <div class="grid">
     <!-- header -->
-    {% include "includes/header.htm" %}
+    {% include "includes/header.html" %}
   {% endif %}
     <!-- main -->
     {% block main %}
@@ -24,10 +24,10 @@
     {% endblock %}
   {% if title !== '404' %}
     <!-- footer -->
-    {% include "includes/footer.htm" %}
+    {% include "includes/footer.html" %}
   </div>
-    {% include "includes/popshare.htm" %}
-    {% include "includes/pswshare.htm" %}
+    {% include "includes/popshare.html" %}
+    {% include "includes/pswshare.html" %}
     <!-- scripts -->
     <script src="assets/js/main.min.js"></script>
   {% endif %}
