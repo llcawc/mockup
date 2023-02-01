@@ -9,7 +9,7 @@ import sassGulp from 'gulp-sass'
 const sass = sassGulp(sassDark)
 import purgecss from 'gulp-purgecss'
 import postCss from 'gulp-postcss'
-import cssnano from 'cssnano'
+import csso from 'postcss-csso'
 import autoprefixer from 'autoprefixer'
 import rename from 'gulp-rename'
 
@@ -47,10 +47,7 @@ function cssbau() {
     return src(paths.src)
       .pipe(sass.sync())
       .pipe(purgecss(paths.purge))
-      .pipe(postCss([
-        autoprefixer(),
-        cssnano({ preset: ['default', { discardComments: { removeAll: true } }], }),
-      ]))
+      .pipe(postCss([ autoprefixer, csso({ comments: false }), ]))
       .pipe(rename({suffix: '.min'}))
       .pipe(dest(paths.dest))
   } else {

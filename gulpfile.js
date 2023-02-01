@@ -37,6 +37,6 @@ function watchDev() {
 // export
 export { htmlbau, clean, assetscopy, styles, scripts, images }
 export let assets = series(htmlbau, assetscopy, styles, scripts)
-export let serve = parallel(browserSync, watchDev)
-export let dev = series(clean, images, assets, serve)
-export let build = series(clean, images, assets)
+export let serve  = parallel(browserSync, watchDev)
+export let dev    = series(clean, images, assets, serve)
+export let build  = series(clean, images, assets)
