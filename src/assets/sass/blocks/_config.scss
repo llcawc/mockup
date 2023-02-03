@@ -1,5 +1,8 @@
 // _config.scss
 // GENERAL PROJECT STYLES
+:root {
+  --awc-accent-rgb: 245 130 32;
+}
 
 body {
   min-width: 320px;
@@ -17,7 +20,9 @@ body {
 }
 
 :focus-visible {
-    outline: 2px dotted $accent;
+    outline: 2px solid rgb(var(--awc-accent-rgb) / 0.5);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
 }
 
 input,
@@ -31,19 +36,4 @@ textarea {
   &:required:valid {
     border-color: green;
   }
-}
-
-
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.grid {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 17rem auto 4.5rem;
 }

@@ -1,13 +1,7 @@
 // app.js
 // Файл пользовательских скриптовъ
 
-// --- import jQuery module  (npm i jquery) ---
-// import $ from 'jquery'
-// window.jQuery = $
-// window.$ = $
-
 // Библиотека frameworks Bootstrap
-
 // --- Importing bootstrap plugins that I need ---
 // import "bootstrap/js/dist/alert";
 // import "bootstrap/js/dist/carousel";

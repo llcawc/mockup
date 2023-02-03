@@ -1,0 +1,32 @@
+extends ../layouts/default.pug
+
+block variables
+  - var title = 'Contacts'
+  - var page  = 'contacts'
+  - var pageheader  = 'CONTACTS'
+
+block main
+  main.container-md
+    section.mt-5
+      table.mx-auto
+        thead
+          tr
+            td
+            td
+              h3 Mockup Template
+        tbody
+          tr
+            td.text-end.align-top
+              p Addres:
+            td
+              p.ms-2 70 Washington Square South New York, NY 10012, United States
+          tr
+            td.text-end.align-top
+              p Phone:
+            td
+              p.ms-2 +92 423 567 852
+          tr
+            td.text-end.align-top
+              p Email:
+            td
+              p.ms-2 info@mockup.com
