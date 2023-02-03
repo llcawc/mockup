@@ -1,19 +1,19 @@
 {
   "name": "mockup",
-  "version": "23.02.01",
+  "version": "23.02.03",
   "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
-  "description": "Mockup Template Nunjucks Starter by pasmurno",
+  "description": "Mockup Template Starter by pasmurno on base PUG template",
   "type": "module",
   "main": "gulpfile.js",
   "scripts": {
+    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/mockup/",
     "dev": "gulp dev",
     "serve": "gulp serve",
     "images": "gulp images",
     "del": "gulp clean",
-    "build": "BUILD=production gulp build",
-    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/mockup/"
+    "build": "BUILD=production gulp build"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -28,26 +28,24 @@
     "gulp-changed": "^4.0.3",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^8.0.0",
-    "gulp-nunjucks": "^5.1.0",
     "gulp-postcss": "^9.0.1",
-    "gulp-prettier": "^4.0.0",
+    "gulp-pug": "^5.0.0",
     "gulp-purgecss": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
-    "imagemin-svgo": "^10.0.1",
-    "imagemin-webp": "^7.0.0",
     "postcss": "^8.4.21",
     "postcss-csso": "^6.0.1",
-    "rollup": "^3.10.1",
-    "sass": "^1.57.1",
-    "terser": "^5.16.1"
+    "pug": "^3.0.2",
+    "rollup": "^3.13.0",
+    "sass": "^1.58.0",
+    "terser": "^5.16.3"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "jquery": "^3.6.3",
-    "photoswipe": "^5.3.4",
+    "photoswipe": "^5.3.5",
     "shufflejs": "^6.1.0"
   }
 }

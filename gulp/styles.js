@@ -9,8 +9,8 @@ import sassGulp from 'gulp-sass'
 const sass = sassGulp(sassDark)
 import purgecss from 'gulp-purgecss'
 import postCss from 'gulp-postcss'
-import csso from 'postcss-csso'
 import autoprefixer from 'autoprefixer'
+import csso from 'postcss-csso'
 import rename from 'gulp-rename'
 
 // variables & path
@@ -25,16 +25,16 @@ let paths = {
   reject: baseDir + '/assets/css',
   purge: {
     content: [
-      baseDir + '/**/*.{html,htm,njk}',
-      baseDir + '/assets/scripts/**/*.js',
+      distDir + '/**/*.html',
+      distDir + '/assets/js/**/*.js',
       baseDir + '/assets/sass/blocks/_pswp.scss',
       'node_modules/bootstrap/js/dist/dom/*.js',
       'node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js',
     ],
-    // css: [],
+    css: [],
     safelist: {
-      // standart: ["selectorname"],
-      deep: [/scrolltotop$/],
+      standart: [],
+      deep: [/scrolltotop$/, /:focus-visible$/, /dark-blur-body$/],
       greedy: [/on$/, /down$/, /is-hidden$/],
     },
     keyframes: true,
@@ -47,7 +47,10 @@ function cssbau() {
     return src(paths.src)
       .pipe(sass.sync())
       .pipe(purgecss(paths.purge))
-      .pipe(postCss([ autoprefixer, csso({ comments: false }), ]))
+      .pipe(postCss([
+        autoprefixer,
+        csso({ comments: false }),
+      ]))
       .pipe(rename({suffix: '.min'}))
       .pipe(dest(paths.dest))
   } else {

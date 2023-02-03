@@ -8,6 +8,7 @@ h6 {}
 h4 {}
 h5 {}
 abbr[title] {}
+address {}
 ol {}
 
 dl {}
@@ -16,7 +17,6 @@ ol ol {}
 ol ul {}
 
 ul ol {}
-dt {}
 dd {}
 blockquote {}
 
@@ -37,29 +37,16 @@ samp {}
 pre code {}
 kbd {}
 kbd kbd {}
-table {}
-th {}
-thead {}
-
-tbody {}
 
 tfoot {}
-
-tr {}
-
-td {}
-
-th {}
 label {}
 
 optgroup {}
-[role=button] {}
 fieldset {}
 legend {}
 legend + * {}
 [type=search] {}
 output {}
-summary {}
 progress {}
 .lead {}
 .display-1 {}
@@ -79,7 +66,6 @@ progress {}
 .img-fluid {}
 .img-thumbnail {}
 .figure-img {}
-.container {}
 
 .container-xxl {}
 
@@ -89,7 +75,6 @@ progress {}
 
 .container-sm {}
 .container-sm {}
- .container {}
  .container-sm {}
 .container-lg {}
 .container-xl {}
@@ -98,6 +83,7 @@ progress {}
  .container-xl {}
 .row-cols-auto > * {}
 .row-cols-1 > * {}
+.row-cols-2 > * {}
 .row-cols-3 > * {}
 .row-cols-4 > * {}
 .row-cols-5 > * {}
@@ -105,6 +91,7 @@ progress {}
 .col-auto {}
 .col-1 {}
 .col-2 {}
+.col-3 {}
 .col-4 {}
 .col-6 {}
 .col-7 {}
@@ -169,7 +156,6 @@ progress {}
 .col-sm-7 {}
 .col-sm-8 {}
 .col-sm-9 {}
-.col-sm-10 {}
 .col-sm-11 {}
 .offset-sm-0 {}
 .offset-sm-1 {}
@@ -515,7 +501,6 @@ progress {}
 .nav-justified .nav-item .nav-link {}
 .tab-content > .tab-pane {}
 .tab-content > .active {}
-.navbar > .container {}
 
 .navbar > .container-sm {}
 
@@ -552,6 +537,7 @@ progress {}
 .navbar-expand-md .offcanvas .offcanvas-header {}
 .navbar-expand-md .offcanvas .offcanvas-body {}
 .navbar-expand-lg .navbar-nav-scroll {}
+.navbar-expand-lg .offcanvas {}
 .navbar-expand-lg .offcanvas .offcanvas-header {}
 .navbar-expand-lg .offcanvas .offcanvas-body {}
 .navbar-expand-xl {}
@@ -651,7 +637,6 @@ progress {}
 .text-truncate {}
 .vr {}
 .align-baseline {}
-.align-top {}
 .align-middle {}
 .align-bottom {}
 .align-text-bottom {}
@@ -668,7 +653,6 @@ progress {}
 .overflow-visible {}
 .overflow-scroll {}
 .d-inline {}
-.d-block {}
 .d-grid {}
 .d-table {}
 .d-table-row {}
@@ -729,7 +713,6 @@ progress {}
 .w-75 {}
 .w-auto {}
 .mw-100 {}
-.vw-100 {}
 .min-vw-100 {}
 .h-25 {}
 .h-50 {}
@@ -787,7 +770,6 @@ progress {}
 .mx-3 {}
 .mx-4 {}
 .mx-5 {}
-.mx-auto {}
 .my-0 {}
 .my-1 {}
 .my-2 {}
@@ -811,7 +793,6 @@ progress {}
 .mb-auto {}
 .ms-0 {}
 .ms-1 {}
-.ms-2 {}
 .ms-3 {}
 .ms-4 {}
 .ms-5 {}
@@ -836,6 +817,7 @@ progress {}
 .pt-2 {}
 .pt-3 {}
 .pt-4 {}
+.pt-5 {}
 .pe-0 {}
 .pe-1 {}
 .pe-2 {}
@@ -844,6 +826,7 @@ progress {}
 .pb-1 {}
 .pb-2 {}
 .pb-3 {}
+.pb-4 {}
 .pb-5 {}
 .ps-0 {}
 .ps-1 {}
@@ -3635,4 +3618,3 @@ progress {}
 .bi-sina-weibo::before {}
 .bi-tencent-qq::before {}
 .bi-wikipedia::before {}
-:focus-visible {}

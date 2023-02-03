@@ -1,0 +1,63 @@
+extends ../layouts/default.pug
+
+block variables
+  - var title = 'Home'
+  - var page  = 'index'
+  - var pageheader  = 'Mockup Template'
+
+block main
+  main.container-md
+    div(class="row mb-5")
+      h2(class="col-sm-10 col-lg-8 text-center mx-auto my-5") Welcome to yours new Starter template for a multi-page site!
+      div(class="col-sm-12 col-lg-6 mb-3 mb-lg-0")
+        figure(class="pswp-one-image w-100 h-100 figure-hover")
+          a(href="assets/images/preview.jpg", data-size="1280x853", data-cropped="true", target="_blank")
+            img(class="d-block rounded w-100 h-100", src="assets/images/preview.jpg", alt="Starter Template - Saint Petersburg")
+      div(class="col-12 col-lg-6 d-flex justify-content-between flex-column position-relative")
+        button(class="bi-share", data-share="popshare", data-delta-x="0", data-delta-y="0", title="Поделится")
+        div(class="text-center text-lg-start")
+          p.pe-4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit nulla alias expedita a qui, pariatur doloremque ipsa fugit laboriosam odio iure recusandae laborum delectus praesentium magni reiciendis voluptatem. Sed.
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eligendi ab temporibus delectus quaerat officia, magni corporis amet, deserunt natus, excepturi commodi deleniti quasi nisi. Ut tempora porro illo iusto asperiores quidem enim voluptatem eaque repudiandae vel. Modi, earum atque. Suscipit excepturi inventore illo expedita ducimus animi ipsa est ad.
+        div(class="text-center text-lg-start mt-2 text-light")
+          button(type="button", id="open-popup", class="btn btn-outline-accent", title="viewing content of different types") View Content
+    div(class="row mb-5")
+      section(class="col-sm-12")
+        h2.text-center Lightbox Photo Gallery
+        ul(class="d-flex list-unstyled justify-content-center gap-3 mb-3")
+          li#all.d-inline-block
+            a(href="all") Total
+          li#foo.d-inline-block
+            a(href="foo") Bodrum
+          li#bar.d-inline-block
+            a(href="bar") Tuapse
+          li#baz.d-inline-block
+            a(href="baz") Dolgoe
+        div#gallery-grid.pswp-gallery
+          a(data-groups='["foo"]', class="gallery-item", href="assets/images/b2.jpg", data-size="1920x1200", target="_blank", title='Townhouse "Silverine"')
+            img(src="assets/images/thumb/b2-640x400.jpg", width="640", height="400", alt="Фото", data-capt='Townhouse "Silverine"')
+          a(data-groups='["baz"]', class="gallery-item", href="assets/images/b3.jpg", data-size="1920x1200", target="_blank", title='Residential Complex "Нousewarming"')
+            img(src="assets/images/thumb/b3-640x400.jpg", width="640", height="400", alt="Фото", data-capt='Residential Complex "Нousewarming"')
+          a(data-groups='["foo"]', class="gallery-item", href="assets/images/b4.jpg", data-size="1920x1200", target="_blank", title='Residential Complex "Soul lift"')
+            img(src="assets/images/thumb/b4-640x400.jpg", width="640", height="400", alt="Фото", data-capt='Residential Complex "Soul lift"')
+          a(data-groups='["bar"]', class="gallery-item", href="assets/images/b1.jpg", data-size="1920x1200", target="_blank", title="Cottage 250 m2")
+            img(src="assets/images/thumb/b1-640x400.jpg", width="640", height="400", alt="Фото", data-capt='Cottage 250 m2')
+          a(data-groups='["baz"]', class="gallery-item", href="assets/images/b5.jpg", data-size="1920x1200", target="_blank", title="Typical American Single Family Cottage")
+            img(src="assets/images/thumb/b5-640x400.jpg", width="640", height="400", alt="Фото", data-capt='Typical American Single Family Cottage')
+          a(data-groups='["bar"]', class="gallery-item", href="assets/images/b6.jpg", data-size="1920x1200", target="_blank" title="European house 350 m2")
+            img(src="assets/images/thumb/b6-640x400.jpg", width="640", height="400", alt="Фото", data-capt='European house 350 m2')
+          a(data-groups='["foo"]', class="gallery-item", href="assets/images/b7.jpg", data-size="1920x1200", target="_blank", title="Modern Cottage")
+            img(src="assets/images/thumb/b7-640x400.jpg", width="640", height="400", alt="Фото", data-capt='Modern Cottage')
+    div(class="row mb-5")
+      div(class="col-sm-12 col-lg-4")
+        h3 Ingardeum Leviossa
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita exercitationem illo a dolorem nulla delectus eos enim facilis voluptatem quis nisi beatae molestias amet, nobis quia magni deleniti dolorum eum quos sint itaque dolor, quibusdam harum! Voluptas eos placeat hic, sit consectetur quisquam cupiditate dicta mollitia labore, tenetur voluptate ipsam fuga a dolor accusamus soluta, tempore iste? Cum sapiente sequi, quasi nemo inventore molestiae omnis. Accusamus commodi laudantium itaque necessitatibus dicta illo voluptatem molestias harum sit excepturi eius neque esse pariatur in libero, delectus assumenda dolorum. In commodi, nemo rerum, provident est totam quis ullam ab, rem minima veniam iure.
+      div(class="col-sm-12 col-lg-4")
+        h3 Petrificus Totales
+        p Sit dolor a adipisci amet aspernatur incidunt sint rem, quibusdam cupiditate. Beatae atque vero dolore, porro quo quisquam maxime, cumque autem, nisi non suscipit eius tenetur. Nisi nostrum nobis iste accusantium nihil, voluptates perferendis assumenda, aut doloribus vitae recusandae quos eligendi illo sapiente libero id accusamus soluta quis amet quod rerum eos! Debitis natus neque cupiditate impedit, rerum quaerat. Ipsa dolor eos aliquam sequi repellat rerum, accusantium cumque culpa animi dolores impedit doloribus veniam laboriosam totam modi iusto dolorum nam eaque dicta. Quod doloremque voluptates autem eos labore magni assumenda amet blanditiis nemo maiores? Esse sit ipsum officiis aliquid. Quasi.
+      div(class="col-sm-12 col-lg-4")
+        h3 Lumos Maxima
+        p Quae iusto, deserunt, explicabo delectus blanditiis perferendis aut ipsum tenetur, commodi recusandae quaerat. Debitis dolorem mollitia in maxime iure sequi tenetur cupiditate inventore repudiandae exercitationem! Dolorem aliquam voluptatibus modi officia, voluptate iste, cumque alias quod minus voluptatum commodi optio aspernatur nam molestias consectetur placeat nobis molestiae veritatis dignissimos exercitationem quae iure tenetur sequi temporibus. Consectetur sequi eius veritatis culpa odio corporis inventore.
+        p.mb-0 Run <code>npm</code> command:
+        ul(class="mb-0 ms-sm-3")
+          li for development: <code> npm run dev</code>
+          li for build: <code> npm run build</code>
