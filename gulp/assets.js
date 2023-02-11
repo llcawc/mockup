@@ -1,6 +1,6 @@
 // assets.js
 
-// require
+// import modules
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import { deleteAsync as del } from 'del'
@@ -28,7 +28,7 @@ let paths = {
 }
 
 // tasks
-function assets() {
+function assetscopy() {
   return src(paths.copy.src, { base: paths.copy.base }).pipe(dest(paths.copy.dest))
 }
 function bicopy() {
@@ -39,5 +39,5 @@ function clean() {
 }
 
 // export
-let assetscopy = series(assets, bicopy)
-export { clean, assetscopy }
+let copy = series(assetscopy, bicopy)
+export { clean, copy }

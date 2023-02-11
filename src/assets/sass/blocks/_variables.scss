@@ -42,14 +42,14 @@ $spacer: $grid-gutter-width;
 // Grig - частично данные согласованы с tailwind ... https://tailwindcss.com/docs/breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 640px,
+  sm: 480px,
   md: 768px,
   lg: 1024px,
   xl: 1280px,
   xxl: 1536px,
 );
 $container-max-widths: (
-  sm: 600px,
+  sm: 420px,
   md: 720px,
   lg: 960px,
   xl: 1200px,
@@ -58,9 +58,9 @@ $container-max-widths: (
 
 // Ratio
 $aspect-ratios: (
-  '1x1': 100%,
-  '4x3': calc(3 / 4 * 100%),
-  '16x9': calc(9 / 16 * 100%),
+  '1x1'  : 100%,
+  '4x3'  : calc(3  / 4  * 100%),
+  '16x9' : calc(9  / 16 * 100%),
   '16x10': calc(10 / 16 * 100%),
-  '21x9': calc(9 / 21 * 100%),
+  '21x9' : calc(9  / 21 * 100%),
 );

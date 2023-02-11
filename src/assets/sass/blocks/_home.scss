@@ -9,9 +9,10 @@
   transform: translateY(-4.5rem);
 }
 
-.grid {
+.wrapper {
   display: grid;
-  grid-template-rows: 13.5rem auto 4.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   min-height: 100vh;
 }
 
@@ -90,7 +91,7 @@ img {
     }
   }
 
-  @media (min-width: 460px) {
+  @include media-breakpoint-up(sm) {
     width: calc(50% - $gutter * 0.5);
     margin-left: $gutter * 0.25;
     margin-right: $gutter * 0.25;
@@ -133,5 +134,6 @@ img {
 }
 
 footer {
+  align-self: end;
   box-shadow: 0 -0.5rem 1rem rgba(#000, 0.15);  //shadow to up
 }
