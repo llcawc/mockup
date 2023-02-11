@@ -1,6 +1,6 @@
 {
-  "name": "mockup",
-  "version": "23.02.03",
+  "name": "mockup-pug",
+  "version": "23.02.11",
   "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
@@ -8,12 +8,12 @@
   "type": "module",
   "main": "gulpfile.js",
   "scripts": {
-    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/mockup/",
+    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/mockup-pug/",
     "dev": "gulp dev",
+    "del": "gulp clean",
     "serve": "gulp serve",
     "images": "gulp images",
-    "del": "gulp clean",
-    "build": "BUILD=production gulp build"
+    "build": "BUILD=production gulp build && npm run arch"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -26,7 +26,6 @@
     "del": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.3",
-    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^8.0.0",
     "gulp-postcss": "^9.0.1",
     "gulp-pug": "^5.0.0",
@@ -37,7 +36,7 @@
     "postcss": "^8.4.21",
     "postcss-csso": "^6.0.1",
     "pug": "^3.0.2",
-    "rollup": "^3.13.0",
+    "rollup": "^3.15.0",
     "sass": "^1.58.0",
     "terser": "^5.16.3"
   },

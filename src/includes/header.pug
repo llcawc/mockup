@@ -1,23 +1,21 @@
-unless page==='404'
-  header
-    div.container-fluid.px-0
-      nav(class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark nav-autohide shadow")
-        div(class="navbar-compensation container-md")
-          a(class="navbar-brand fw-bold fs-4" href="index.html") Mockup
-          button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации")
-            span(class="navbar-toggler-icon")
-          div(class="collapse navbar-collapse justify-content-end" id="navbarNav")
-            ul(class="navbar-nav fs-5 text-end mt-lg-0 mt-2")
-              li.nav-item
-                a(class=page==='index'?"nav-link active":"nav-link" aria-current="page" href="/") <i class="bi bi-house"></i>&nbsp;Home
-              li.nav-item.ps-3
-                a(class=page==='blog'?"nav-link active":"nav-link" href="blog.html") <i class="bi bi-pencil-square"></i>&nbsp;Blog
-              li.nav-item.ps-3
-                a(class=page==='contacts'?"nav-link active":"nav-link" href="contacts.html") <i class="bi bi-signpost"></i>&nbsp;Contacts
-              li.nav-item.ps-3
-                a(class=page==='404'?"nav-link active":"nav-link" href="404.html") <i class="bi bi-exclamation-diamond"></i>&nbsp;Error
-    div(class="container-fluid header-section")
-      img(src="assets/images/preview.jpg", alt="img")
-      .row
-        .col-sm-12
-          h1 #{pageheader}
+header
+  nav(class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark nav-autohide shadow")
+    div(class="navbar-compensation container-md")
+      a(class="navbar-brand fw-bold fs-4" href="index.html") Mockup
+      button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации")
+        span(class="navbar-toggler-icon")
+      div(class="collapse navbar-collapse justify-content-end" id="navbarNav")
+        ul(class="navbar-nav fs-5 text-end mt-lg-0 mt-2")
+          li.nav-item
+            a(class=page==='index'?"nav-link active":"nav-link" aria-current="page" href="/") <i class="bi bi-house"></i>&nbsp;Home
+          li.nav-item.ps-3
+            a(class=page==='blog'?"nav-link active":"nav-link" href="/blog") <i class="bi bi-pencil-square"></i>&nbsp;Blog
+          li.nav-item.ps-3
+            a(class=page==='contacts'?"nav-link active":"nav-link" href="/contacts") <i class="bi bi-signpost"></i>&nbsp;Contacts
+          li.nav-item.ps-3
+            a(class=page==='404'?"nav-link active":"nav-link" href="/404.html") <i class="bi bi-exclamation-diamond"></i>&nbsp;Error
+  div(class="container-fluid header-section")
+    img(src="/assets/images/preview.jpg", alt="img")
+    .row
+      .col-sm-12
+        h1 #{pageheader}

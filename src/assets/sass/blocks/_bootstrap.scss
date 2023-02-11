@@ -88,8 +88,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // 8. Добавьте сюда дополнительный пользовательский код
 // custom bootstrap styles
 .btn-outline-accent {
-  &:hover,
-  &:active {
-    color: $white;
-  }
+  --awc-btn-hover-color: #fff;
+  --awc-btn-active-color: #fff;
 }

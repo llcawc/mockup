@@ -1,12 +1,14 @@
-extends ../layouts/blank.pug
+extends ../layouts/default.pug
 
 block variables
   - var title = 'Error 404'
   - var page  = '404'
   - var pageheader  = 'Error 404'
 
+block header
+  section
 block main
-  main(class="container-md vw-100 vh-100")
+  main(class="container-md w-100 h-100")
     div(class="row h-100 align-items-center justify-content-center")
       div(class="col-9 col-sm-5 d-inline-flex gap-2")
         h1.mb-0 <i class="bi bi-bell"></i>
@@ -14,3 +16,6 @@ block main
           h1.mb-0 Error 404!
           p.mb-2 Document not found.
           a(class="btn btn-outline-accent" href="/") Home
+block footer
+  section
+block scripts

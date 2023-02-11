@@ -1,4 +1,4 @@
-extends ../layouts/default.pug
+extends ../../layouts/default.pug
 
 block variables
   - var title = 'Contacts'
@@ -7,7 +7,7 @@ block variables
 
 block main
   main.container-md
-    section.mt-5
+    section.my-3
       table.mx-auto
         thead
           tr
@@ -30,3 +30,5 @@ block main
               p Email:
             td
               p.ms-2 info@mockup.com
+block scripts
+  script(src="/assets/js/main.min.js")
