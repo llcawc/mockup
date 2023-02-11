@@ -13,23 +13,25 @@
 </head>
 
 <body>
-  {% if title !== '404' %}
-  <div class="grid">
+  <div class="wrapper">
     <!-- header -->
+    {% block head %}
     {% include "includes/header.html" %}
-  {% endif %}
+    {% endblock %}
     <!-- main -->
     {% block main %}
-    This is the default main content
+      This is the default main content
     {% endblock %}
-  {% if title !== '404' %}
     <!-- footer -->
+    {% block footer %}
     {% include "includes/footer.html" %}
+    {% endblock %}
   </div>
-    {% include "includes/popshare.html" %}
-    {% include "includes/pswshare.html" %}
-    <!-- scripts -->
+  <!-- scripts & cod -->
+  {% block scripts %}
+  {% include "includes/popshare.html" %}
+  {% include "includes/pswshare.html" %}
     <script src="assets/js/main.min.js"></script>
-  {% endif %}
+  {% endblock %}
 </body>
 </html>

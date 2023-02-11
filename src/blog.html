@@ -1,4 +1,3 @@
-{# blog.html #}
 {% extends "layouts/default.html" %}
 {% set title = "Blog" %}
 {% set pageheader = "BLOG" %}
@@ -81,4 +80,6 @@
   </div>
 </main>
 {% endblock %}
-{# end blog.html #}
+{% block scripts %}
+  <script src="assets/js/main.min.js"></script>
+{% endblock %}

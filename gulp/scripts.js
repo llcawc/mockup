@@ -10,6 +10,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { minify } from "terser"
 import gulpTerser from "gulp-terser"
+import chalk from 'chalk'
 
 // variables & path
 const baseDir = 'src'
@@ -32,6 +33,7 @@ async function compile() {
     name: 'main',
     sourcemap: env.BUILD === 'production' ? false : true,
   })
+  console.log(env.BUILD === 'production' ? chalk.green('JS compile OK!'):chalk.magenta('JS compile OK!'))
 }
 
 // minify scripts task

@@ -11,7 +11,7 @@
 
 .header-section {
   position: relative;
-  margin: 8rem auto 0;
+  margin: 4.5rem auto 0;
   overflow: hidden;
   h1 {
     text-align: center;
@@ -66,19 +66,16 @@
     }
   }
 
-  @media (min-width: 460px) {
+  @include media-breakpoint-up(sm) {
     width: calc(50% - $gutter * 0.5);
     margin-left: $gutter * 0.25;
     margin-right: $gutter * 0.25;
   }
   @include media-breakpoint-up(md) {
-    width: calc(33.33% - $gutter * 0.5);
-  }
-  @include media-breakpoint-up(lg) {
     width: calc(25% - $gutter * 0.5);
   }
-  @include media-breakpoint-up(xl) {
-    width: calc(100%/7 - $gutter * 0.5);
+  @include media-breakpoint-up(lg) {
+    width: calc(100% / 7 - $gutter * 0.5);
   }
 }
 
@@ -108,6 +105,14 @@
   text-decoration: underline;
 }
 
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
 footer {
+  align-self: end;
   box-shadow: 0 -0.5rem 1rem rgba(#000, 0.15);  //shadow to up
 }

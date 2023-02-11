@@ -12,6 +12,7 @@ import postCss from 'gulp-postcss'
 import csso from 'postcss-csso'
 import autoprefixer from 'autoprefixer'
 import rename from 'gulp-rename'
+import chalk from 'chalk'
 
 // variables & path
 const baseDir = 'src'
@@ -22,7 +23,7 @@ let paths = {
     baseDir + '/assets/sass/fonts.*',
   ],
   dest:   distDir + '/assets/css',
-  reject: baseDir + '/assets/css',
+  reject: distDir + '/assets/css',
   purge: {
     content: [
       baseDir + '/**/*.{html,htm,njk}',
@@ -31,18 +32,14 @@ let paths = {
       'node_modules/bootstrap/js/dist/dom/*.js',
       'node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js',
     ],
-    // css: [],
-    safelist: {
-      // standart: ["selectorname"],
-      deep: [/scrolltotop$/],
-      greedy: [/on$/, /down$/, /is-hidden$/],
-    },
+    safelist: [/:focus-visible/,/scrolltotop$/,/on$/, /down$/, /is-hidden$/],
     keyframes: true,
   },
 }
 
 // task
 function cssbau() {
+  console.log(env.BUILD === 'production' ? chalk.green('CSS build OK!'):chalk.magenta('CSS build OK!'))
   if (env.BUILD === 'production') {
     return src(paths.src)
       .pipe(sass.sync())
@@ -59,7 +56,7 @@ function cssbau() {
 }
 
 // task view rejected styles
-function reject() {
+function cssreject() {
   paths.purge.rejected = true
   return src(paths.src)
     .pipe(sass.sync())
@@ -69,4 +66,4 @@ function reject() {
 }
 
 // export
-export let styles = series( cssbau, reject )
+export let styles = env.BUILD === 'production' ? cssbau : series( cssbau, cssreject )

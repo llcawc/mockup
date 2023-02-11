@@ -1,10 +1,9 @@
-{# contacts.html #}
 {% extends "layouts/default.html" %}
 {% set title = "Contacts" %}
 {% set pageheader = "CONTACTS" %}
 {# ••• #}
 {% block main %}
-<main class="container-md mb-3">
+<main class="container-md">
   <div class="row row-cols-2 pt-5 pb-4">
     <div class="col-3 col-lg-4 text-end"></div>
     <div class="col-9 col-lg-8">
@@ -31,4 +30,6 @@
   </div>
 </main>
 {% endblock %}
-{# end contacts.html #}
+{% block scripts %}
+  <script src="assets/js/main.min.js"></script>
+{% endblock %}

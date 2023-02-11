@@ -1,6 +1,6 @@
 {
   "name": "mockup",
-  "version": "23.02.01",
+  "version": "23.02.11",
   "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
@@ -8,12 +8,13 @@
   "type": "module",
   "main": "gulpfile.js",
   "scripts": {
+    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/mockup/",
     "dev": "gulp dev",
     "serve": "gulp serve",
     "images": "gulp images",
+    "webp": "BUILD=webp gulp images",
     "del": "gulp clean",
-    "build": "BUILD=production gulp build",
-    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/mockup/"
+    "build": "BUILD=production gulp build && npm run arch"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -36,18 +37,18 @@
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
     "imagemin-svgo": "^10.0.1",
-    "imagemin-webp": "^7.0.0",
+    "imagemin-webp": "^8.0.0",
     "postcss": "^8.4.21",
     "postcss-csso": "^6.0.1",
-    "rollup": "^3.10.1",
-    "sass": "^1.57.1",
-    "terser": "^5.16.1"
+    "rollup": "^3.15.0",
+    "sass": "^1.58.0",
+    "terser": "^5.16.3"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "jquery": "^3.6.3",
-    "photoswipe": "^5.3.4",
+    "photoswipe": "^5.3.5",
     "shufflejs": "^6.1.0"
   }
 }
