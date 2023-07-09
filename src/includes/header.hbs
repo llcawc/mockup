@@ -1,0 +1,45 @@
+<header>
+  <div class="container-fluid px-0">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark nav-autohide shadow">
+      <div class="navbar-compensation container-md">
+        <a class="navbar-brand fw-bold fs-4" href="index.html">Mockup</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav fs-5 text-end mt-lg-0 mt-2">
+            <li class="nav-item">
+              <a class="nav-link
+              {{#ifpage 'index'}}
+                active
+              {{/ifpage}}" aria-current="page" href="/"><i class="bi bi-house"></i>&nbsp;Home</a>
+            </li>
+            <li class="nav-item ps-3">
+              <a class="nav-link
+              {{#ifpage 'blog'}}
+                active
+              {{/ifpage}}" href="blog.html"><i class="bi bi-pencil-square"></i>&nbsp;Blog</a>
+            </li>
+            <li class="nav-item ps-3">
+              <a class="nav-link
+              {{#ifpage 'contacts'}}
+                active
+              {{/ifpage}}" href="contacts.html"><i class="bi bi-signpost"></i>&nbsp;Contacts</a>
+            </li>
+            <li class="nav-item ps-3">
+              <a class="nav-link" href="404.html"><i class="bi bi-exclamation-diamond"></i>&nbsp;Error</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container-fluid header-section">
+      <img src="assets/images/preview.jpg" alt="img">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>{{ pageheader }}</h1>
+      </div>
+    </div>
+  </div>
+</header>

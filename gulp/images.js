@@ -1,12 +1,10 @@
 // images.js
 
-// import modules
-import { env } from 'process'
+// require
 import gulp from 'gulp'
 const { src, dest, parallel, series } = gulp
 import imagemin from 'gulp-imagemin'
 import changed from 'gulp-changed'
-import chalk from 'chalk'
 
 // variables & patch
 const baseDir = 'src'
@@ -18,7 +16,6 @@ let paths = {
 
 // images resize task
 function images() {
-  console.log(env.BUILD === 'production' ? chalk.green('Images transform OK!'):chalk.magenta('Images transform OK!'))
   return src(paths.src, { base: baseDir })
     .pipe(changed(paths.dest))
     .pipe(imagemin({ verbose: 'true' }))

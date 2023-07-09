@@ -38,3 +38,18 @@ textarea {
     border-color: green;
   }
 }
+
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.grid {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 17rem auto 4.5rem;
+}

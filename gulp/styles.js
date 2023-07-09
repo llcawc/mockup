@@ -9,10 +9,9 @@ import sassGulp from 'gulp-sass'
 const sass = sassGulp(sassDark)
 import purgecss from 'gulp-purgecss'
 import postCss from 'gulp-postcss'
-import autoprefixer from 'autoprefixer'
 import csso from 'postcss-csso'
+import autoprefixer from 'autoprefixer'
 import rename from 'gulp-rename'
-import chalk from 'chalk'
 
 // variables & path
 const baseDir = 'src'
@@ -23,16 +22,21 @@ let paths = {
     baseDir + '/assets/sass/fonts.*',
   ],
   dest:   distDir + '/assets/css',
-  reject: distDir + '/assets/css',
+  reject: baseDir + '/assets/css',
   purge: {
     content: [
-      distDir + '/**/*.html',
-      distDir + '/assets/js/**/*.js',
+      baseDir + '/**/*.{html,htm,hbs}',
+      baseDir + '/assets/scripts/**/*.js',
       baseDir + '/assets/sass/blocks/_pswp.scss',
       'node_modules/bootstrap/js/dist/dom/*.js',
       'node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js',
     ],
-    safelist: [/scrolltotop$/,/:focus-visible$/,/open-share/,/dark-blur-body$/,/on$/,/down$/,/is-hidden$/,],
+    // css: [],
+    safelist: {
+      // standart: ["selectorname"],
+      deep: [/scrolltotop$/, /:focus-visible$/, /dark-blur-body$/],
+      greedy: [/on$/, /down$/, /is-hidden$/],
+    },
     keyframes: true,
   },
 }
@@ -40,15 +44,13 @@ let paths = {
 // task
 function cssbau() {
   if (env.BUILD === 'production') {
-    console.log(chalk.green('Styles build OK!'))
     return src(paths.src)
       .pipe(sass.sync())
       .pipe(purgecss(paths.purge))
-      .pipe(postCss([ autoprefixer, csso({ comments: false }), ]))
+      .pipe(postCss([ autoprefixer, csso({ comments: false }),]))
       .pipe(rename({suffix: '.min'}))
       .pipe(dest(paths.dest))
   } else {
-    console.log(chalk.magenta('Styles build OK!'))
     return src(paths.src, { sourcemaps: true })
       .pipe(sass.sync().on('error', sass.logError))
       .pipe(rename({suffix: '.min'}))
@@ -57,7 +59,7 @@ function cssbau() {
 }
 
 // task view rejected styles
-function cssreject() {
+function reject() {
   paths.purge.rejected = true
   return src(paths.src)
     .pipe(sass.sync())
@@ -67,4 +69,4 @@ function cssreject() {
 }
 
 // export
-export let styles = env.BUILD === 'production' ? cssbau : series(cssbau, cssreject)
+export let styles = series( cssbau, reject )
