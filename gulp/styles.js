@@ -4,7 +4,7 @@
 import { env } from 'process'
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
-import sassDark from 'sass'
+import * as sassDark from 'sass'
 import sassGulp from 'gulp-sass'
 const sass = sassGulp(sassDark)
 import purgecss from 'gulp-purgecss'

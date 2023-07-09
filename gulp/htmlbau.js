@@ -6,7 +6,7 @@ import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import panini from 'panini' // panini documentation: https://get.foundation/sites/docs/panini.html
 import prettier from 'gulp-prettier'
-import minify from 'gulp-htmlmin'
+import minify from 'gulp-html-minifier-terser'
 import rename from 'gulp-rename'
 
 // variables & path
