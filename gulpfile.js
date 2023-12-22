@@ -6,9 +6,9 @@ const { src, dest, parallel, series, watch } = gulp
 import browsersync from 'browser-sync'
 import { htmlbau } from './gulp/htmlbau.js'
 import { images } from './gulp/images.js'
-import { styles } from './gulp/styles.js'
+import { styles, reject } from './gulp/styles.js'
 import { scripts } from './gulp/scripts.js'
-import { clean, assetscopy } from './gulp/assets.js'
+import { clean } from './gulp/assets.js'
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -27,7 +27,7 @@ function browserSync() {
 
 // watch task
 function watchDev() {
-  watch(`./${baseDir}/**/*.{html,htm,hbs}`, { usePolling: true }, htmlbau)
+  watch(`./${baseDir}/**/*.{html,htm}`, { usePolling: true }, htmlbau)
   watch(`./${baseDir}/assets/scripts/**/*.{js,mjs,cjs}`, { usePolling: true }, scripts)
   watch(`./${baseDir}/assets/sass/**/*.{scss,sass,css}`, { usePolling: true }, styles)
   watch(`./${baseDir}/assets/images/**/*.{jpg,png,svg}`, { usePolling: true }, images)
@@ -35,8 +35,8 @@ function watchDev() {
 }
 
 // export
-export { htmlbau, clean, assetscopy, styles, scripts, images }
-export let assets = series(htmlbau, assetscopy, styles, scripts)
+export { htmlbau, clean, styles, reject, scripts, images }
+export let assets = series(htmlbau, styles, scripts)
 export let serve = parallel(browserSync, watchDev)
 export let dev = series(clean, images, assets, serve)
 export let build = series(clean, images, assets)

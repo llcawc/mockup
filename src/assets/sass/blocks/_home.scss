@@ -27,6 +27,20 @@
   }
 }
 
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+  svg {
+    margin-top: 2px;
+  }
+  &:hover {
+    border-bottom: 2px solid $accent;
+  }
+}
+
 .figure-hover {
   padding: 0;
   margin: 0;

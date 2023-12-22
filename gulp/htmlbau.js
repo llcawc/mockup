@@ -7,7 +7,6 @@ const { src, dest, parallel, series, watch } = gulp
 import panini from 'panini' // panini documentation: https://get.foundation/sites/docs/panini.html
 import prettier from 'gulp-prettier'
 import minify from 'gulp-html-minifier-terser'
-import rename from 'gulp-rename'
 
 // variables & path
 const baseDir = 'src'
@@ -23,10 +22,9 @@ const paniset = {
 // html assembly task
 function assemble() {
   panini.refresh()
-  return src(baseDir +'/pages/*.hbs')
+  return src(baseDir +'/pages/*.html')
     .pipe(panini(paniset))
     .pipe(prettier({ parser: "html" }))
-    .pipe(rename({ extname: '.html' }))
     .pipe(dest(distDir))
 }
 

@@ -42,7 +42,7 @@ let paths = {
 }
 
 // task
-function cssbau() {
+function styles() {
   if (env.BUILD === 'production') {
     return src(paths.src)
       .pipe(sass.sync())
@@ -69,4 +69,4 @@ function reject() {
 }
 
 // export
-export let styles = series( cssbau, reject )
+export { styles, reject }

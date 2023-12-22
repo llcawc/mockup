@@ -21,7 +21,7 @@ let paths = {
 }
 
 // task
-async function compile() {
+async function scripts() {
   const bundle = await rollup({
     input: paths.src,
     plugins: [nodeResolve(), commonjs({ include: 'node_modules/**' }), babel({ babelHelpers: 'bundled' })],
@@ -32,14 +32,12 @@ async function compile() {
     name: 'main',
     sourcemap: env.BUILD === 'production' ? false : true,
   })
-}
-
-// minify scripts task
-function min() {
-  return src(paths.min)
-    .pipe(gulpTerser({compress: {passes: 2}, format: {comments: false}}, minify))
-    .pipe(dest(paths.dest))
+  if (env.BUILD === 'production') {
+    return src(paths.min)
+      .pipe(gulpTerser({compress: {passes: 2}, format: {comments: false}}, minify))
+      .pipe(dest(paths.dest))
+  }
 }
 
 // export
-export let scripts = env.BUILD === 'production' ? series(compile, min) : compile
+export { scripts }

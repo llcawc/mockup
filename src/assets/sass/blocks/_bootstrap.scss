@@ -1,4 +1,4 @@
-// _bootstrap.scss ... v5.3.0 ... https://getbootstrap.com/docs/5.3/customize/sass/
+// _bootstrap.scss ... v5.3.2 ... https://getbootstrap.com/docs/5.3/customize/sass/
 
 // BOOTSTRAP
 
@@ -54,23 +54,23 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import 'node_modules/bootstrap/scss/images';
 @import 'node_modules/bootstrap/scss/containers';
 @import 'node_modules/bootstrap/scss/grid';
-// @import "node_modules/bootstrap/scss/tables";
-// @import "node_modules/bootstrap/scss/forms";
 @import 'node_modules/bootstrap/scss/buttons';
 @import 'node_modules/bootstrap/scss/transitions';
+// @import "node_modules/bootstrap/scss/forms";
+// @import "node_modules/bootstrap/scss/alert";
+// @import "node_modules/bootstrap/scss/close";
 // @import "node_modules/bootstrap/scss/dropdown";
-// @import "node_modules/bootstrap/scss/button-group";
 @import 'node_modules/bootstrap/scss/nav';
 @import 'node_modules/bootstrap/scss/navbar'; // Requires nav
 // @import "node_modules/bootstrap/scss/card";
-// @import "node_modules/bootstrap/scss/accordion";
+// @import "node_modules/bootstrap/scss/tables";
+// @import "node_modules/bootstrap/scss/button-group";
 // @import "node_modules/bootstrap/scss/breadcrumb";
+// @import "node_modules/bootstrap/scss/accordion";
 // @import "node_modules/bootstrap/scss/pagination";
 // @import "node_modules/bootstrap/scss/badge";
-// @import "node_modules/bootstrap/scss/alert";
 // @import "node_modules/bootstrap/scss/progress";
 // @import "node_modules/bootstrap/scss/list-group";
-// @import "node_modules/bootstrap/scss/close";
 // @import "node_modules/bootstrap/scss/toasts";
 // @import "node_modules/bootstrap/scss/modal"; // Requires transitions
 // @import "node_modules/bootstrap/scss/tooltip";
@@ -90,7 +90,11 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // custom bootstrap styles
 .btn-outline-accent {
   &:hover,
-  &:active {
-    color: $white;
+  &:active,
+  &:focus-visible {
+    color: var(--ps-white) !important;
+  }
+  &:focus {
+    color: var(--ps-accent);
   }
 }

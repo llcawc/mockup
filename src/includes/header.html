@@ -9,25 +9,16 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav fs-5 text-end mt-lg-0 mt-2">
             <li class="nav-item">
-              <a class="nav-link
-              {{#ifpage 'index'}}
-                active
-              {{/ifpage}}" aria-current="page" href="/"><i class="bi bi-house"></i>&nbsp;Home</a>
+              <a class="nav-link {{#ifpage 'index'}} active {{/ifpage}}" aria-current="page" href="/"><svg width="24" height="24" fill="currentColor"><use xlink:href="#house"></use></svg>&nbsp;Home</a>
             </li>
             <li class="nav-item ps-3">
-              <a class="nav-link
-              {{#ifpage 'blog'}}
-                active
-              {{/ifpage}}" href="blog.html"><i class="bi bi-pencil-square"></i>&nbsp;Blog</a>
+              <a class="nav-link {{#ifpage 'blog'}} active {{/ifpage}}" href="blog.html"><svg width="24" height="24" fill="currentColor"><use xlink:href="#pencil-square"></use></svg>&nbsp;Blog</a>
             </li>
             <li class="nav-item ps-3">
-              <a class="nav-link
-              {{#ifpage 'contacts'}}
-                active
-              {{/ifpage}}" href="contacts.html"><i class="bi bi-signpost"></i>&nbsp;Contacts</a>
+              <a class="nav-link {{#ifpage 'contacts'}} active {{/ifpage}}" href="contacts.html"><svg width="24" height="24" fill="currentColor"><use xlink:href="#signpost"></use></svg>&nbsp;Contacts</a>
             </li>
             <li class="nav-item ps-3">
-              <a class="nav-link" href="404.html"><i class="bi bi-exclamation-diamond"></i>&nbsp;Error</a>
+              <a class="nav-link" href="404.html"><svg width="24" height="24" fill="currentColor"><use xlink:href="#exclamation-diamond"></use></svg>&nbsp;Error</a>
             </li>
           </ul>
         </div>
@@ -38,7 +29,7 @@
       <img src="assets/images/preview.jpg" alt="img">
     <div class="row">
       <div class="col-sm-12">
-        <h1>{{ pageheader }}</h1>
+        <h1 class="text-white">{{ pageheader }}</h1>
       </div>
     </div>
   </div>

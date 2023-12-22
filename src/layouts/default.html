@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="dark">
 
 <head>
   <meta charset="utf-8" />
@@ -7,12 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/images/favicon.png" type="image/png" />
   <meta property="og:image" content="assets/images/preview.jpg">
-  <link rel="preload" as="style" href="assets/css/fonts.min.css" />
-  <link rel="stylesheet" href="assets/css/fonts.min.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="assets/css/main.min.css" />
 </head>
 
 <body>
+  {{> svgsprite}}
   {{#unlesspage '404'}}
   <div class="grid">
     <!-- header -->
