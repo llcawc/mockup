@@ -3,15 +3,16 @@
 $accent:        #f58220; // акцентный цвет для выделения
 $textcolor:     #6C757D; // основной цвет текста gray-600
 $darkcolor:     #212529; // основной темный цвет gray-900
+$lightcolor:    #fff;    // основной светлый цвет white
 
 // Prefix for :root CSS variables
 $variable-prefix:  ps-;
 
 // Settings for the `<body>` element.
 $body-color:        $textcolor;
-$body-bg:           #fff;
+$body-bg:           $lightcolor;
 $body-color-dark:   #DEE2E6; // gray-300
-$body-bg-dark:      #212529;
+$body-bg-dark:      #212529; // gray-900
 $body-text-align:   left;
 
 // Style anchor elements.
@@ -27,14 +28,15 @@ $link-hover-decoration:   null; // or underline, or none;
 $transition-base:         all .25s;
 
 // Typography
-// $font-family-base:  'Segoe UI', sans-serif;
+$font-family-base:  ps-Inter, sans-serif;
+$font-family-code:  ps-JetBrainsMono, monospace;
 $font-size-base:    1.125rem; // Основной размер шрифта: 16 * 1.125 = 18px
 $line-height-base:  1.3333; // 18px * 1.3333 = 24px Document Line Height
 
 // Headings
 $headings-font-weight:  700;
 $headings-color:        $darkcolor;
-$headings-color-dark:   #fff;
+$headings-color-dark:   $lightcolor;
 $headings-margin-bottom: 1.2rem;
 
 // Bootstrap compatible gutter variable => $gutter
@@ -57,13 +59,4 @@ $container-max-widths: (
   lg:   960px,
   xl:  1200px,
   xxl: 1440px,
-);
-
-// Ratio
-$aspect-ratios: (
-  '1x1':   100%,
-  '4x3':   calc( 3 / 4  * 100% ),
-  '16x9':  calc( 9 / 16 * 100% ),
-  '16x10': calc(10 / 16 * 100% ),
-  '21x9':  calc( 9 / 21 * 100% ),
 );

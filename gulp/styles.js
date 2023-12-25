@@ -18,8 +18,8 @@ const baseDir = 'src'
 const distDir = 'dist'
 let paths = {
   src: [
-    baseDir + '/assets/sass/main.*',
-    baseDir + '/assets/sass/fonts.*',
+    baseDir + '/assets/scss/main.*',
+    baseDir + '/assets/scss/fonts.*',
   ],
   dest:   distDir + '/assets/css',
   reject: baseDir + '/assets/css',
