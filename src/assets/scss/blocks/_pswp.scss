@@ -2,13 +2,13 @@
 
 .pswp {
   --pswp-bg: #000;
-  --pswp-placeholder-bg: #2d2d2d;
-  --pswp__top-bar-bg: linear-gradient(to top, transparent 0, #000 120%);
+  --pswp-placeholder-bg: #222;
+  --pswp__top-bar-bg: linear-gradient(0deg, transparent 0, rgba(0, 0, 0, 0.006) 8.1%, rgba(0, 0, 0, 0.021) 15.5%, rgba(0, 0, 0, 0.046) 22.5%, rgba(0, 0, 0, 0.077) 29%, rgba(0, 0, 0, 0.114) 35.3%, rgba(0, 0, 0, 0.155) 41.2%, rgba(0, 0, 0, 0.198) 47.1%, rgba(0, 0, 0, 0.242) 52.9%, rgba(0, 0, 0, 0.285) 58.8%, rgba(0, 0, 0, 0.326) 64.7%, rgba(0, 0, 0, 0.363) 71%, rgba(0, 0, 0, 0.394) 77.5%, rgba(0, 0, 0, 0.419) 84.5%, rgba(0, 0, 0, 0.434) 91.9%, rgba(0, 0, 0, 0.44));
   --pswp-error-text-color: #f7f7f7;
   --pswp-root-z-index: 100000;
-  --pswp-preloader-color: rgba(80, 80, 80, 0.4);
+  --pswp-preloader-color: rgba(79, 79, 79, 0.4);
   --pswp-preloader-color-secondary: rgba(255, 255, 255, 0.9);
-  --pswp-caption-color: linear-gradient(to top, #424245cc -10%, #222225cc 50%, #424245cc 110%);
+  --pswp-caption-color: linear-gradient(to top, rgba(54, 54, 54, 0.8) -10%, rgba(39, 39, 39, 0.8) 50%, rgba(54, 54, 54, 0.8) 110%);
 
   /* defined via js:
   --pswp-transition-duration: 333ms; */
