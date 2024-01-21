@@ -104,7 +104,8 @@ lightbox.on('uiRegister', function () {
     appendTo: 'root',
     html: 'Caption text',
     onInit: (el, pswp) => {
-      lightbox.pswp.on('change', () => {
+      // console.log(pswp === lightbox.pswp) // true
+      pswp.on('change', () => {
         const currSlideElement = lightbox.pswp.currSlide.data.element
         let captionHTML = ''
         if (currSlideElement) {
@@ -121,7 +122,6 @@ lightbox.on('uiRegister', function () {
 
 lightbox.init()
 // ------------------------------------------------------------
-
 
 // ------------------------------------------------------------
 // add to anchors new possibility to open share window

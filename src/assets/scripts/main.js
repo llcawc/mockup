@@ -1,7 +1,6 @@
 // app.js
 // Файл пользовательских скриптовъ
 
-
 // Библиотека frameworks Bootstrap
 // --- Importing bootstrap plugins that I need ---
 // import "bootstrap/js/dist/alert";
@@ -24,3 +23,4 @@ import './blocks/pswp.js'
 import './blocks/share.js'
 import './blocks/gallery.js'
 import './blocks/common.js'
+import './blocks/pkginfo.js'

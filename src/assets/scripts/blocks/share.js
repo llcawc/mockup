@@ -35,9 +35,9 @@ function openShare(butshare) {
     })
   }
   // close share block if scroll
-  document.addEventListener('scroll', function (e) {
+  document.addEventListener('scroll', () => {
     if (!ticking) {
-      window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(() => {
         share.classList.remove('open-share')
         butshare.blur()
         ticking = false
@@ -46,14 +46,14 @@ function openShare(butshare) {
     }
   })
   // close share block if press key Esc
-  document.addEventListener('keydown', function (e) {
+  document.addEventListener('keydown', (e) => {
     if (e.code == 'Escape') {
       e.preventDefault()
       share.classList.remove('open-share')
     }
   })
   // close share block if click out block
-  document.addEventListener('click', function (e) {
+  document.addEventListener('click', (e) => {
     const target = e.target
     const its_pop = target == popshare || popshare.contains(target)
     const pop_is_open = share.classList.contains('open-share')
@@ -162,27 +162,27 @@ sendEmailLinkBut.forEach((el) => {
 
 // dark blur body  -----------------------------
 
-let blur = document.querySelectorAll('.blur')
-let diVuale = document.createElement('div')
-let nav = document.querySelector('.navbar')
-let ScrollBar = window.innerWidth - document.documentElement.clientWidth
+// let blur = document.querySelectorAll('.blur')
+// let diVuale = document.createElement('div')
+// let nav = document.querySelector('.navbar')
+// let ScrollBar = window.innerWidth - document.documentElement.clientWidth
 
-function darkBody() {
-  document.body.style.overflowY = 'hidden'
-  document.body.style.paddingRight = ScrollBar + 'px'
-  nav.style.paddingRight = ScrollBar + 'px'
-  blur.forEach((el) => {
-    el.style.filter = 'blur(2px)'
-  })
-  diVuale.className = 'dark-blur-body'
-  document.body.append(diVuale)
-}
+// function darkBody() {
+//   document.body.style.overflowY = 'hidden'
+//   document.body.style.paddingRight = ScrollBar + 'px'
+//   nav.style.paddingRight = ScrollBar + 'px'
+//   blur.forEach((el) => {
+//     el.style.filter = 'blur(2px)'
+//   })
+//   diVuale.className = 'dark-blur-body'
+//   document.body.append(diVuale)
+// }
 
-function clearBodyStyle() {
-  document.body.style = ''
-  nav.style.paddingRight = ''
-  blur.forEach((el) => {
-    el.style = ''
-  })
-  diVuale.remove()
-}
+// function clearBodyStyle() {
+//   document.body.style = ''
+//   nav.style.paddingRight = ''
+//   blur.forEach((el) => {
+//     el.style = ''
+//   })
+//   diVuale.remove()
+// }

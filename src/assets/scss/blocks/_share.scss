@@ -1,27 +1,27 @@
 // share.sass
 
 .bi-share {
-  background-color: #fff;
-  border: 1px solid $gray-200;
-  border-radius: 0.5rem; // 8px
   position: absolute;
   top: 0;
   right: 1rem;
   width: 2rem;
   height: 2rem;
+  background-color: #fff;
+  border: 1px solid $gray-200;
+  border-radius: 0.5rem; // 8px
   transition: 0.3s;
 
   &::before {
     display: inline-block;
-    content: '';
     width: 100%;
     height: 100%;
+    content: "";
     background-image: escape-svg(
       url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.4 15.723c-.684 0-1.296.271-1.764.696l-6.417-3.75a2.97 2.97 0 0 0 .08-.633 2.97 2.97 0 0 0-.08-.632l6.345-3.714a2.683 2.683 0 0 0 1.836.732c1.494 0 2.7-1.211 2.7-2.711A2.701 2.701 0 0 0 17.4 3c-1.494 0-2.7 1.21-2.7 2.71 0 .218.036.426.08.633l-6.344 3.714A2.683 2.683 0 0 0 6.6 9.325a2.702 2.702 0 0 0-2.7 2.711c0 1.5 1.206 2.711 2.7 2.711.71 0 1.35-.28 1.836-.732l6.408 3.76a2.56 2.56 0 0 0-.072.586A2.636 2.636 0 0 0 17.4 21a2.636 2.636 0 0 0 2.628-2.639 2.636 2.636 0 0 0-2.628-2.638Z" fill="#6C757D"/></svg>')
     );
     background-repeat: no-repeat;
-    background-size: 1.5rem 1.5rem;
     background-position: center;
+    background-size: 1.5rem 1.5rem;
   }
 
   &:hover {
@@ -30,8 +30,8 @@
   }
 
   &:active {
-    transform: translateY(0.125rem);
     box-shadow: 0 0 3px 1px rgba(#000, 0.05);
+    transform: translateY(0.125rem);
   }
 
   &:focus {
@@ -41,13 +41,13 @@
 }
 
 .pop-wrapper {
-  width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  visibility: hidden;
   z-index: 1100;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
   transition: 200ms;
 }
 
@@ -55,6 +55,7 @@
   position: absolute;
   top: -9999px;
   left: -9999px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -62,14 +63,13 @@
   min-width: 6rem;
   min-height: 6rem;
   padding: 1rem;
-  border-radius: 0.5rem;
+  visibility: hidden;
   background-color: #fff;
   border: 1px solid $gray-200;
+  border-radius: 0.5rem;
   box-shadow: 0 16px 20px -8px rgba(#000, 0.3);
-  transition: 200ms transform, 200ms opacity, 200ms visibility;
-  z-index: 1;
   opacity: 0.01;
-  visibility: hidden;
+  transition: 200ms transform, 200ms opacity, 200ms visibility;
   transform: scale(0.9);
 }
 
@@ -77,8 +77,8 @@
   visibility: visible;
   background-color: rgba(#000, 0.5);
   .pop-share {
-    visibility: visible;
     z-index: 1200;
+    visibility: visible;
     opacity: 1;
     transform: scale(1); // changed in js
   }
@@ -86,8 +86,8 @@
 
 .icon-share {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 1rem;
   a {
@@ -120,14 +120,14 @@
 }
 
 .dark-blur-body {
-  background-color: rgba(#000, 0.5);
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   z-index: 1100;
   overflow: hidden;
-  outline: 0;
   touch-action: none;
+  background-color: rgba(#000, 0.5);
+  outline: 0;
 }

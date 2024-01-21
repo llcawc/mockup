@@ -5,22 +5,22 @@ $bott: 90px;
 $righ: 20px;
 
 #scrolltotop {
-  background-color: rgba($accent, 0.5);
-  opacity: 0;
-  transition: background-color 0.4s, box-shadow 0.4s, opacity 1.2s ease;
-  bottom: $bott;
+  position: fixed;
   right: $righ;
+  bottom: $bott;
+  z-index: 199;
   width: 40px;
   height: 40px;
+  background-color: rgba($accent, 0.5);
   border-radius: 4px;
-  position: fixed;
-  z-index: 199;
+  opacity: 0;
+  transition: background-color 0.4s, box-shadow 0.4s, opacity 1.2s ease;
 
   svg {
-    stroke: #fff;
     width: 24px;
     height: 24px;
     margin: (40px - 24px) * 0.5;
+    stroke: #fff;
   }
 
   &:hover {
@@ -29,14 +29,14 @@ $righ: 20px;
   }
 
   &:active {
-    transform: scale(0.95);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
   }
 
   &.on {
+    cursor: pointer;
     opacity: 1 !important;
     animation: up 1.2s ease;
-    cursor: pointer;
   }
 
   &.down {
@@ -61,19 +61,19 @@ $righ: 20px;
 
 @keyframes down {
   0% {
-    transform: rotate(0deg);
     opacity: 1;
+    transform: rotate(0deg);
   }
 
   70% {
-    opacity: 1;
     bottom: $bott;
+    opacity: 1;
     transform: rotate(-360deg);
   }
 
   100% {
-    opacity: 0;
     bottom: 0;
+    opacity: 0;
     transform: rotate(-360deg);
   }
 }

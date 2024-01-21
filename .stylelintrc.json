@@ -1,0 +1,24 @@
+{
+  "extends": ["stylelint-config-twbs-bootstrap"],
+  "reportInvalidScopeDisables": true,
+  "reportNeedlessDisables": true,
+  "rules": {
+    "selector-no-qualifying-type": null,
+    "declaration-no-important": null,
+    "selector-class-pattern": null,
+    "selector-max-id": null,
+    "color-named": null,
+    "@stylistic/string-quotes": null,
+    "@stylistic/number-leading-zero": null,
+    "@stylistic/declaration-colon-newline-after": null
+  },
+  "overrides": [
+    {
+      "files": ["./**/*.scss"],
+      "customSyntax": "postcss-scss",
+      "rules": {
+        "scss/selector-no-union-class-name": true
+      }
+    }
+  ]
+}

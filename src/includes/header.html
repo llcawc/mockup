@@ -9,16 +9,24 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav fs-5 text-end mt-lg-0 mt-2">
             <li class="nav-item">
-              <a class="nav-link {{#ifpage 'index'}} active {{/ifpage}}" aria-current="page" href="/"><svg width="24" height="24" fill="currentColor"><use xlink:href="#house"></use></svg>&nbsp;Home</a>
+              <a href="/" class="nav-link {{#ifpage 'index'}} active {{/ifpage}}" aria-current="page"><svg width="24" height="24" fill="currentColor">
+                  <use xlink:href="#house"></use>
+                </svg>&nbsp;Home</a>
             </li>
             <li class="nav-item ps-3">
-              <a class="nav-link {{#ifpage 'blog'}} active {{/ifpage}}" href="blog.html"><svg width="24" height="24" fill="currentColor"><use xlink:href="#pencil-square"></use></svg>&nbsp;Blog</a>
+              <a href="blog.html" class="nav-link {{#ifpage 'blog'}} active {{/ifpage}}"><svg width="24" height="24" fill="currentColor">
+                  <use xlink:href="#pencil-square"></use>
+                </svg>&nbsp;Blog</a>
             </li>
             <li class="nav-item ps-3">
-              <a class="nav-link {{#ifpage 'contacts'}} active {{/ifpage}}" href="contacts.html"><svg width="24" height="24" fill="currentColor"><use xlink:href="#signpost"></use></svg>&nbsp;Contacts</a>
+              <a href="contacts.html" class="nav-link {{#ifpage 'contacts'}} active {{/ifpage}}"><svg width="24" height="24" fill="currentColor">
+                  <use xlink:href="#signpost"></use>
+                </svg>&nbsp;Contacts</a>
             </li>
             <li class="nav-item ps-3">
-              <a class="nav-link" href="404.html"><svg width="24" height="24" fill="currentColor"><use xlink:href="#exclamation-diamond"></use></svg>&nbsp;Error</a>
+              <a class="nav-link" href="404.html"><svg width="24" height="24" fill="currentColor">
+                  <use xlink:href="#exclamation-diamond"></use>
+                </svg>&nbsp;Error</a>
             </li>
           </ul>
         </div>
@@ -26,7 +34,7 @@
     </nav>
   </div>
   <div class="container-fluid header-section">
-      <img src="assets/images/preview.jpg" alt="img">
+    <img src="assets/images/preview.jpg" alt="img" />
     <div class="row">
       <div class="col-sm-12">
         <h1 class="text-white">{{ pageheader }}</h1>

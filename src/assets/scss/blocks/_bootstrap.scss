@@ -29,7 +29,7 @@
 // 3. Include remainder of required Bootstrap stylesheets
 // 3. Включите оставшуюся часть необходимых таблиц стилей Bootstrap
 @import 'node_modules/bootstrap/scss/variables';
-@import "node_modules/bootstrap/scss/variables-dark";
+@import 'node_modules/bootstrap/scss/variables-dark';
 
 // 4. Include any default map overrides here
 // 4. Включите сюда любые переопределения карт по умолчанию
@@ -94,6 +94,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   &:focus-visible {
     color: var(--ps-white) !important;
   }
+
   &:focus {
     color: var(--ps-accent);
   }

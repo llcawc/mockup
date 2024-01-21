@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru" data-bs-theme="dark">
 
 <head>
@@ -6,7 +6,7 @@
   <title>Mockup • {{ title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/images/favicon.png" type="image/png" />
-  <meta property="og:image" content="assets/images/preview.jpg">
+  <meta property="og:image" content="assets/images/preview.jpg" />
   <link rel="preload" as="style" href="assets/css/fonts.min.css" />
   <link rel="stylesheet" href="assets/css/fonts.min.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="assets/css/main.min.css" />
@@ -18,17 +18,18 @@
   <div class="grid">
     <!-- header -->
     {{> header}}
-  {{/unlesspage}}
+    {{/unlesspage}}
     <!-- main -->
     {{> body}}
-  {{#unlesspage '404'}}
+    {{#unlesspage '404'}}
     <!-- footer -->
     {{> footer}}
   </div>
-    {{> popshare}}
-    {{> pswshare}}
+  {{> popshare}}
+  {{> pswshare}}
   <!-- script -->
   <script src="assets/js/main.min.js"></script>
   {{/unlesspage}}
 </body>
+
 </html>

@@ -21,7 +21,7 @@ function eventScrollToTop() {
   })
 
   arrowUp.onclick = function (event) {
-    // event.preventDefault();
+    event.preventDefault()
     window.scrollTo({
       left: this.scrollX,
       top: 0,
@@ -40,7 +40,7 @@ function scrollToTopLoader() {
 // Запуск кнопки scrollToTop после полной загрузки DOM для экранов с viwport более 340px
 document.addEventListener('DOMContentLoaded', () => {
   let intViewportWidth = window.innerWidth // viwport X
-  let intViewportHeight = window.innerHeight // viewport Y
+  // let intViewportHeight = window.innerHeight // viewport Y
   if (intViewportWidth >= 340) {
     scrollToTopLoader()
     eventScrollToTop()
