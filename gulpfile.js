@@ -40,15 +40,11 @@ const configPurge = {
   content: [
     baseDir + '/**/*.{html,htm,hbs}',
     baseDir + '/assets/scripts/**/*.js',
-    baseDir + '/assets/sass/blocks/_pswp.scss',
+    baseDir + '/assets/scss/blocks/_pswp.scss',
     'node_modules/bootstrap/js/dist/dom/*.js',
     'node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js',
   ],
-  safelist: {
-    // standart: ["selectorname"],
-    deep: [/scrolltotop$/, /:focus-visible$/, /dark-blur-body$/],
-    greedy: [/on$/, /down$/, /is-hidden$/],
-  },
+  safelist: [/scrolltotop$/, /on$/, /down$/, /is-hidden$/, /:focus-visible$/, /dark-blur-body$/],
   keyframes: true,
 }
 
