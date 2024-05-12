@@ -1,0 +1,66 @@
+// _variables.scss - user and bootstrap variables
+
+// Color
+$accent:                #f58220; // акцентный цвет для выделения
+$textcolor:             #6c757d; // основной цвет текста gray-600
+$darkcolor:             #212529; // основной темный цвет gray-900
+$lightcolor:            #ffffff; // основной светлый цвет white
+
+// Prefix for :root CSS variables
+$variable-prefix:         ps-;
+
+// Settings for the `<body>` element.
+$body-color:              $textcolor;
+$body-bg:                 $lightcolor;
+$body-color-dark:       #dee2e6; // gray-300
+$body-bg-dark:          #212529;
+$body-text-align:         left;
+
+// Style anchor elements.
+$link-color:              $accent;
+$link-color-dark:         $accent; // tint-color($accent, 40%);
+$link-decoration:         none;
+$link-shade-percentage:   20%;
+$link-hover-color:        shift-color($link-color, $link-shade-percentage);
+$link-hover-color-dark:   shift-color($link-color-dark, -$link-shade-percentage);
+$link-hover-decoration:   null; // or underline, or none;
+
+// Transition
+$transition-base:         all 0.25s;
+
+// Typography
+$font-family-sans-serif:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:   FMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// base font
+$font-family-base:        "ps-Inter", sans-serif;
+$font-family-code:        "ps-JetBrainsMono", monospace;
+$font-size-base:          1rem; // Основной размер шрифта: 16px
+$line-height-base:        1.5; // 24px
+
+// Headings
+$headings-font-weight:    700;
+$headings-color:          $darkcolor;
+$headings-color-dark:     $lightcolor;
+$headings-margin-bottom:  1.2rem;
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width:       1.5rem; //24px
+$gutter:                  $grid-gutter-width;
+$spacer:                  $grid-gutter-width;
+
+// Grig - частично данные согласованы с tailwind ... https://tailwindcss.com/docs/breakpoints
+$grid-breakpoints: (
+  xs:          0,
+  sm:      480px,
+  md:      768px,
+  lg:     1024px,
+  xl:     1280px,
+  xxl:    1536px,
+);
+$container-max-widths: (
+  sm:      420px,
+  md:      720px,
+  lg:      960px,
+  xl:     1200px,
+  xxl:    1440px,
+);

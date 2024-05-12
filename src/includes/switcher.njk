@@ -1,0 +1,41 @@
+<div class="switcher-dropdown dropdown">
+  <button class="btn-switcher dropdown-toggle" id="switcher-desktop" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" title="Цветовая схема сайта">
+    <svg class="icon theme-icon-active" fill="currentColor">
+      <use href="#circle-half"></use>
+    </svg></button>
+  <ul class="dropdown-menu" aria-labelledby="switcher-desktop">
+    <li>
+      <button class="dropdown-item d-flex align-items-center column-gap-1" data-theme-value="light">
+        <svg class="icon me-2 opacity-50 theme-icon" fill="currentColor">
+          <use href="#sun-fill"></use>
+        </svg>
+        Light
+        <svg class="icon ms-1 d-none" fill="currentColor">
+          <use href="#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button class="dropdown-item d-flex align-items-center column-gap-1" data-theme-value="dark">
+        <svg class="icon me-2 opacity-50 theme-icon" fill="currentColor">
+          <use href="#moon-stars-fill"></use>
+        </svg>
+        Dark
+        <svg class="icon ms-1 d-none" fill="currentColor">
+          <use href="#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button class="dropdown-item d-flex align-items-center column-gap-1 active" data-theme-value="auto">
+        <svg class="icon me-2 opacity-50 theme-icon" fill="currentColor">
+          <use href="#circle-half"></use>
+        </svg>
+        System
+        <svg class="icon ms-1 d-none" fill="currentColor">
+          <use href="#check2"></use>
+        </svg>
+      </button>
+    </li>
+  </ul>
+</div>

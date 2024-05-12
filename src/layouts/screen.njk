@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Mockup • {{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <meta property="og:image" content="assets/images/preview.jpg">
+  <!-- Compressed Style file: fonts and bootstrap, plagins, custom -->
+  <link rel="preload" as="style" href="/assets/css/fonts.min.css" />
+  <link rel="stylesheet" href="/assets/css/fonts.min.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="/assets/css/main.min.css" />
+  <!-- Compressed JavaScript: bootstrap and custom script -->
+  <script defer src="/assets/js/boots.min.js"></script>
+  <script defer src="/assets/js/main.min.js"></script>
+</head>
+
+<body>
+  <!-- display content -->
+  {% block main %}
+  This is the default main content
+  {% endblock %}
+  <!-- /display content -->
+</body>
+
+</html>

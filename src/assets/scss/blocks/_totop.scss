@@ -1,0 +1,81 @@
+// totop.scss
+// Button to top scroll
+
+$bott: 90px;
+$righ: 20px;
+
+#scrolltotop {
+  background-color: rgba($accent, 0.5);
+  opacity: 0;
+  transition: background-color 0.4s, box-shadow 0.4s, opacity 1.2s ease;
+  bottom: $bott;
+  right: $righ;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  position: fixed;
+  z-index: 199;
+
+  svg {
+    stroke: #fff;
+    width: 24px;
+    height: 24px;
+    margin: (40px - 24px) * 0.5;
+  }
+
+  &:hover {
+    background-color: $accent;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &.on {
+    opacity: 1 !important;
+    animation: up 1.2s ease;
+    cursor: pointer;
+  }
+
+  &.down {
+    animation: down 1.2s ease;
+  }
+}
+
+@keyframes up {
+  0% {
+    bottom: 0;
+  }
+
+  30% {
+    bottom: $bott;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+    bottom: $bott;
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    opacity: 0;
+    bottom: 0;
+    transform: rotate(-360deg);
+  }
+}
+
+// END button to top scroll

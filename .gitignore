@@ -1,0 +1,32 @@
+# Node & project folders
+/.git/
+/node_modules/
+/**/debug.log
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+*.env
+*.exclude
+/**/makefile
+
+# archive package
+/**/*.zip
+/**/*.7z
+
+# iMac cash files
+/**/*.DS_Store
+
+# Windows thumbnail cache files
+/**/Thumbs.db
+/**/Thumbs.db:encryptable
+/**/ehthumbs.db
+/**/ehthumbs_vista.db
+
+# Dump file
+/**/*.stackdump
+
+# Folder config file
+/**/[Dd]esktop.ini
+
+# Windows shortcuts
+/**/*.lnk

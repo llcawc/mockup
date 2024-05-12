@@ -1,0 +1,76 @@
+// _switcher.scss
+// стили переключателя цветовых тем
+
+.switcher-dropdown {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    width: 1em;
+    height: 1em;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 2px;
+  }
+}
+
+.switcher-dropdown .btn-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  text-decoration: none;
+  border: 0;
+  border-radius: 0.375rem;
+  padding: 0.375rem;
+  margin: 0;
+  svg {
+    color: $textcolor;
+  }
+  &::after {
+    color: $textcolor;
+  }
+}
+
+.switcher-dropdown .dropdown-menu {
+  min-height: 7rem;
+  padding: 0.125rem;
+  border-radius: 0.5rem;
+  top: 100%;
+  right: 0;
+  left: auto;
+
+  li + li {
+    margin-top: 0.125rem;
+  }
+
+  .dropdown-item {
+    color: $darkcolor;
+    border-radius: 0.375rem;
+    &:active {
+      background-color: $accent;
+    }
+  }
+
+  .active {
+    color: $lightcolor;
+    font-weight: bold;
+    background-color: $accent;
+    .icon {
+      display: block !important; // stylelint-disable-line declaration-no-important
+    }
+  }
+
+  & *:focus-visible {
+    outline: 4px solid rgba($accent, 0.5) !important;
+    border-radius: 4px;
+    box-shadow: none !important;
+  }
+}
+
+[data-bs-theme="dark"] {
+  .switcher-dropdown .dropdown-menu .dropdown-item {
+    color: $lightcolor;
+  }
+}
