@@ -15,7 +15,7 @@
 
 # October config
 /bootstrap/compiled.php
-/vendor
+# /vendor
 composer.lock
 composer.phar
 php_errors.log
