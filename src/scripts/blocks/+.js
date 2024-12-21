@@ -1,0 +1,8 @@
+import './boots.ts'
+import './gallery.ts'
+import './lightbox.js'
+import './menu.ts'
+import './share.ts'
+import './switcher.ts'
+import './totop.ts'
+import './year.ts'

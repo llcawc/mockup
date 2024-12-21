@@ -1,0 +1,12 @@
+@import "../../vendor/glightbox/dist/css/glightbox.css";
+
+/* glightbox */
+
+.glightbox-container .gslide-inline {
+  background: transparent;
+}
+.glightbox-container .gslide-inline .ginlined-content {
+  padding: 0;
+  width: 100%;
+  height: auto;
+}

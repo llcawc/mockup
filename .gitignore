@@ -3,12 +3,34 @@
 /.osp/
 /node_modules/
 /**/debug.log
-yarn.lock
-pnpm-lock.yaml
-package-lock.json
-*.env
-*.exclude
-/**/makefile
+/**/yarn.lock
+/**/pnpm-lock.yaml
+/**/package-lock.json
+/**/.env
+
+# Config files
+/**/.env
+/**/.env.*.php
+/**/.env.php
+
+# October config
+/bootstrap/compiled.php
+/vendor
+composer.lock
+composer.phar
+php_errors.log
+nginx-error.log
+nginx-access.log
+nginx-ssl.access.log
+nginx-ssl.error.log
+php-errors.log
+sftp-config.json
+.ftpconfig
+selenium.php
+_ide_helper.php
+
+# for netbeans
+nbproject
 
 # archive package
 /**/*.zip

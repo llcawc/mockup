@@ -1,8 +1,0 @@
-// bootstrap-icons.scss
-
-$bootstrap-icons-font: "bi-font";
-$bootstrap-icons-font-dir: "../fonts/biFont";
-$bootstrap-icons-font-file: "#{$bootstrap-icons-font-dir}/#{$bootstrap-icons-font}";
-$bootstrap-icons-font-src: url("#{$bootstrap-icons-font-file}.woff2") format("woff2");
-
-@import "src/libs/bootstrap-icons/font/bootstrap-icons.scss";
