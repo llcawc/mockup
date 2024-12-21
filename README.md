@@ -15,7 +15,7 @@ npm install
 Default directory:
 
 - For development source files: `src`,
-- For server and production: `dist` (will be created after run "dev" or "build")
+- For server and production: `dist` (will be created after run "build")
 
 ## Commands
 

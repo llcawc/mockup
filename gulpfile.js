@@ -8,9 +8,7 @@ import { deleteAsync as del } from 'del'
 
 // images task
 function images() {
-  return src('libs/images/**/*.*', { encoding: false })
-    .pipe(imagemin())
-    .pipe(dest('public/images'))
+  return src('libs/images/**/*.*', { encoding: false }).pipe(imagemin()).pipe(dest('public/images'))
 }
 
 function copy() {
@@ -27,7 +25,7 @@ function clean() {
 }
 
 function watcher() {
-  watch(baseDir + '/assets/images/**/*.{jpg,png,svg}', images)
+  watch('libs/images/**/*.*', images)
 }
 
 export { clean, copy, images }
