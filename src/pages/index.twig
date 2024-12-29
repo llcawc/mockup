@@ -1,21 +1,28 @@
 {% extends "layouts/main.twig" %}
-{% set title = "Home" %}
+{% set title = "Mockup • Home" %}
 {% set pageheader = "Mockup Template" %}
 {# ••• #}
+{% block head %}
+	{{ parent() }}
+{% endblock %}
+{% block header  %}
+	{% include 'partials/svgsprite.twig' %}
+	{{ parent() }}
+{% endblock %}
 {% block main %}
 	<main class="container-md">
 
 		<div class="row mb-5">
 			<div class="col-12 col-lg-6 mb-4 mb-lg-0">
-				<figure class="w-100 h-100 figure-hover">
-					<a class="glightbox" data-gallery="gallery" data-size="1280x853" href="/images/preview.jpg"><img class="w-100 h-100" src="/images/preview.jpg" alt="Starter Template - Saint Petersburg"/></a>
+				<figure class="w-100 h-100 figure-hover photo-gallery">
+					<a data-size="1280x853" href="/assets/images/preview.jpg"><img class="w-100 h-100" src="/assets/images/preview.jpg" alt="Starter Template - Saint Petersburg"/></a>
+					<a class="hidden" data-size="1920x1200" href="/assets/images/b2.jpg" data-title='Townhouse "Silverine"'><img src="/assets/images/b2-640x400.jpg" width="640" height="400" alt="Фото"/></a>
 				</figure>
 			</div>
 
 			<div class="col-12 col-lg-6 d-flex justify-content-between flex-column position-relative">
 
 				<h1>HELLO WORLD!</h1>
-				<button class="bi-share" data-share="popshare" data-delta-x="0" data-delta-y="0" title="Поделится"></button>
 				<h3>Welcome to yours new Starter template for a multi-page site!</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit nulla alias expedita a qui, pariatur doloremque ipsa fugit laboriosam odio iure recusandae laborum delectus praesentium magni reiciendis voluptatem. Sed.</p>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eligendi ab temporibus delectus quaerat officia, magni corporis amet, deserunt natus, excepturi commodi deleniti quasi nisi. Ut tempora porro illo iusto asperiores quidem enim voluptatem eaque repudiandae vel. Modi, earum atque. Suscipit excepturi inventore illo expedita ducimus animi ipsa est ad.</p>
@@ -49,14 +56,14 @@
 							<a href="baz">Dolgoe</a>
 						</li>
 					</ul>
-					<div id="gallery-grid">
-						<a data-groups='["foo"]' class="glightbox gallery-item" data-gallery="gallery1" href="/images/b2.jpg" data-title='Townhouse "Silverine"'><img src="/images/thumb/b2-640x400.jpg" width="640" height="400" alt="Фото"/></a>
-						<a data-groups='["baz"]' class="glightbox gallery-item" data-gallery="gallery1" href="/images/b3.jpg" data-title='Residential Complex "Нousewarming"'><img src="/images/thumb/b3-640x400.jpg" width="640" height="400" alt="Фото"/></a>
-						<a data-groups='["foo"]' class="glightbox gallery-item" data-gallery="gallery1" href="/images/b4.jpg" data-title='Residential Complex "Soul lift"'><img src="/images/thumb/b4-640x400.jpg" width="640" height="400" alt="Фото"/></a>
-						<a data-groups='["bar"]' class="glightbox gallery-item" data-gallery="gallery1" href="/images/b1.jpg" data-title='Cottage 250 m2'><img src="/images/thumb/b1-640x400.jpg" width="640" height="400" alt="Фото"/></a>
-						<a data-groups='["baz"]' class="glightbox gallery-item" data-gallery="gallery1" href="/images/b5.jpg" data-title='Typical American Single Family Cottage'><img src="/images/thumb/b5-640x400.jpg" width="640" height="400" alt="Фото"/></a>
-						<a data-groups='["bar"]' class="glightbox gallery-item" data-gallery="gallery1" href="/images/b6.jpg" data-title='European house 350 m2'><img src="/images/thumb/b6-640x400.jpg" width="640" height="400" alt="Фото"/></a>
-						<a data-groups='["foo"]' class="glightbox gallery-item" data-gallery="gallery1" href="/images/b7.jpg" data-title='Modern Cottage'><img src="/images/thumb/b7-640x400.jpg" width="640" height="400" alt="Фото"/></a>
+					<div id="gallery-grid" class="photo-gallery">
+						<a data-groups='["foo"]' class="gallery-item" data-size="1920x1200" target="_blank" href="/assets/images/b2.jpg" data-title='Townhouse "Silverine"'><img src="/assets/images/b2-640x400.jpg" width="640" height="400" alt="Фото"/></a>
+						<a data-groups='["baz"]' class="gallery-item" data-size="1920x1200" target="_blank" href="/assets/images/b3.jpg" data-title='Residential Complex "Нousewarming"'><img src="/assets/images/b3-640x400.jpg" width="640" height="400" alt="Фото"/></a>
+						<a data-groups='["foo"]' class="gallery-item" data-size="1920x1200" target="_blank" href="/assets/images/b4.jpg" data-title='Residential Complex "Soul lift"'><img src="/assets/images/b4-640x400.jpg" width="640" height="400" alt="Фото"/></a>
+						<a data-groups='["bar"]' class="gallery-item" data-size="1920x1200" target="_blank" href="/assets/images/b1.jpg" data-title='Cottage 250 m2'><img src="/assets/images/b1-640x400.jpg" width="640" height="400" alt="Фото"/></a>
+						<a data-groups='["baz"]' class="gallery-item" data-size="1920x1200" target="_blank" href="/assets/images/b5.jpg" data-title='Typical American Single Family Cottage'><img src="/assets/images/b5-640x400.jpg" width="640" height="400" alt="Фото"/></a>
+						<a data-groups='["bar"]' class="gallery-item" data-size="1920x1200" target="_blank" href="/assets/images/b6.jpg" data-title='European house 350 m2'><img src="/assets/images/b6-640x400.jpg" width="640" height="400" alt="Фото"/></a>
+						<a data-groups='["foo"]' class="gallery-item" data-size="1920x1200" target="_blank" href="/assets/images/b7.jpg" data-title='Modern Cottage'><img src="/assets/images/b7-640x400.jpg" width="640" height="400" alt="Фото"/></a>
 					</div>
 				</div>
 			</section>
@@ -94,3 +101,4 @@
 		</div>
 	</main>
 {% endblock %}
+{% block addons %}{% endblock %}

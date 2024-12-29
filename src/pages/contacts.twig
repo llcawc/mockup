@@ -2,6 +2,10 @@
 {% set title = "Contacts" %}
 {% set pageheader = "CONTACTS" %}
 {# ••• #}
+{% block header %}
+	{% include 'partials/svgsprite.twig' %}
+	{{ parent() }}
+{% endblock %}
 {% block main %}
 	<main class="container-md flex-grow-1">
 		<div class="row row-cols-2 pt-5 pb-4">
@@ -29,5 +33,8 @@
 			</div>
 		</div>
 	</main>
+{% endblock %}
+{% block footer %}
+	{{ parent() }}
 {% endblock %}
 {% block addons %}{% endblock %}

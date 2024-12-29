@@ -5,12 +5,12 @@
 }
 
 ::selection {
-  background-color: rgba(mix(white, $accent, 60%), 0.4);
   color: inherit;
+  background-color: rgba(mix(#fff, $accent, 60%), .4);
 }
 
 *:focus-visible {
-  outline: 4px solid rgba($accent, 0.5) !important;
+  outline: 4px solid rgba($accent, .5) !important;
   box-shadow: none !important;
 }
 
@@ -19,11 +19,11 @@ textarea {
   outline: none;
 
   &:focus:required:invalid {
-    border-color: red;
+    border-color: #f00;
   }
 
   &:required:valid {
-    border-color: green;
+    border-color: #008000;
   }
 }
 
@@ -31,9 +31,9 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-top: 4rem; //64px
-  min-height: 100svh;
   min-width: 320px;
+  min-height: 100svh;
+  padding-top: 4rem; //64px
   overflow-x: hidden;
 }
 
@@ -46,9 +46,9 @@ img {
 
 .hidden {
   display: none;
-  visibility: hidden;
-  width: 0.001px;
-  height: 0.001px;
-  padding: 0;
+  width: .001px;
+  height: .001px;
   margin: 0;
+  padding: 0;
+  visibility: hidden;
 }

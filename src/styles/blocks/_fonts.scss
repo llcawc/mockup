@@ -1,0 +1,48 @@
+// fonts.scss
+
+// FONTS LOAD SECTION  // font-display: swap // Uncomment to initially display system fonts
+@mixin font($fname, $fstyle, $fweight, $furl) {
+
+  @font-face {
+    font-weight: $fweight;
+    font-family: $fname;
+    font-style: $fstyle;
+    src: url($furl) format("woff2");
+    font-display: swap;
+  }
+}
+
+@include font(ps-Inter, normal, 100, "/assets/fonts/Inter-Thin.woff2");
+@include font(ps-Inter, italic, 100, "/assets/fonts/Inter-ThinItalic.woff2");
+@include font(ps-Inter, normal, 200, "/assets/fonts/Inter-ExtraLight.woff2");
+@include font(ps-Inter, italic, 200, "/assets/fonts/Inter-ExtraLightItalic.woff2");
+@include font(ps-Inter, normal, 300, "/assets/fonts/Inter-Light.woff2");
+@include font(ps-Inter, italic, 300, "/assets/fonts/Inter-LightItalic.woff2");
+@include font(ps-Inter, normal, 400, "/assets/fonts/Inter-Regular.woff2");
+@include font(ps-Inter, italic, 400, "/assets/fonts/Inter-Italic.woff2");
+@include font(ps-Inter, normal, 500, "/assets/fonts/Inter-Medium.woff2");
+@include font(ps-Inter, italic, 500, "/assets/fonts/Inter-MediumItalic.woff2");
+@include font(ps-Inter, normal, 600, "/assets/fonts/Inter-SemiBold.woff2");
+@include font(ps-Inter, italic, 600, "/assets/fonts/Inter-SemiBoldItalic.woff2");
+@include font(ps-Inter, normal, 700, "/assets/fonts/Inter-Bold.woff2");
+@include font(ps-Inter, italic, 700, "/assets/fonts/Inter-BoldItalic.woff2");
+@include font(ps-Inter, normal, 800, "/assets/fonts/Inter-ExtraBold.woff2");
+@include font(ps-Inter, italic, 800, "/assets/fonts/Inter-ExtraBoldItalic.woff2");
+@include font(ps-Inter, normal, 900, "/assets/fonts/Inter-Black.woff2");
+@include font(ps-Inter, italic, 900, "/assets/fonts/Inter-BlackItalic.woff2");
+@include font(ps-JetBrainsMono, normal, 100, "/assets/fonts/JetBrainsMono-Thin.woff2");
+@include font(ps-JetBrainsMono, italic, 100, "/assets/fonts/JetBrainsMono-ThinItalic.woff2");
+@include font(ps-JetBrainsMono, normal, 200, "/assets/fonts/JetBrainsMono-ExtraLight.woff2");
+@include font(ps-JetBrainsMono, italic, 200, "/assets/fonts/JetBrainsMono-ExtraLightItalic.woff2");
+@include font(ps-JetBrainsMono, normal, 300, "/assets/fonts/JetBrainsMono-Light.woff2");
+@include font(ps-JetBrainsMono, italic, 300, "/assets/fonts/JetBrainsMono-LightItalic.woff2");
+@include font(ps-JetBrainsMono, normal, 400, "/assets/fonts/JetBrainsMono-Regular.woff2");
+@include font(ps-JetBrainsMono, italic, 400, "/assets/fonts/JetBrainsMono-Italic.woff2");
+@include font(ps-JetBrainsMono, normal, 500, "/assets/fonts/JetBrainsMono-Medium.woff2");
+@include font(ps-JetBrainsMono, italic, 500, "/assets/fonts/JetBrainsMono-MediumItalic.woff2");
+@include font(ps-JetBrainsMono, normal, 600, "/assets/fonts/JetBrainsMono-SemiBold.woff2");
+@include font(ps-JetBrainsMono, italic, 600, "/assets/fonts/JetBrainsMono-SemiBoldItalic.woff2");
+@include font(ps-JetBrainsMono, normal, 700, "/assets/fonts/JetBrainsMono-Bold.woff2");
+@include font(ps-JetBrainsMono, italic, 700, "/assets/fonts/JetBrainsMono-BoldItalic.woff2");
+@include font(ps-JetBrainsMono, normal, 800, "/assets/fonts/JetBrainsMono-ExtraBold.woff2");
+@include font(ps-JetBrainsMono, italic, 800, "/assets/fonts/JetBrainsMono-ExtraBoldItalic.woff2");

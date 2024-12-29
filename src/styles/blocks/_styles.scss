@@ -2,7 +2,7 @@
 
 .nav-autohide {
   min-height: 4.5rem; // 72px
-  transition: transform 0.5s;
+  transition: transform .5s;
 }
 
 .nav-autohide.is-hidden {
@@ -10,23 +10,23 @@
 }
 
 .nav-link {
+  padding-top: .375rem;
+  padding-bottom: .375rem;
   text-align: center;
-  transition: 0.25s;
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+  transition: .25s;
   .bi {
     font-size: 1.5rem;
   }
   span {
+    margin-left: .5rem;
     font-size: 1.25rem;
-    margin-left: 0.5rem;
   }
 }
 
 .nav-switch {
   display: flex;
-  column-gap: 2rem;
   margin-left: auto;
+  column-gap: 2rem;
 }
 
 .nav-link.active {
@@ -38,11 +38,12 @@
 }
 
 .section {
-  text-align: center;
   margin: $gutter auto;
-  padding: ($gutter * 0.5) 0;
+  padding: ($gutter * .5) 0;
+  text-align: center;
   background-color: $gray-100;
 }
+
 @include color-mode(dark) {
   .section {
     background-color: $gray-800;
@@ -51,22 +52,22 @@
 
 .quote {
   position: relative;
+  margin-bottom: .5rem;
   margin-left: 2.5rem;
-  margin-bottom: 0.5rem;
   font-style: italic;
   &::before {
     position: absolute;
-    top: 0.5rem;
+    top: .5rem;
     left: -2.5rem;
-    content: "";
     width: 2rem;
     height: 2rem;
-    background: url("/images/icon/pen.svg") center/cover no-repeat;
+    background: url("/assets/images/pen.svg") center/cover no-repeat;
+    content: "";
   }
   p {
-    margin-top: 0.5rem;
+    margin-top: .5rem;
     font-weight: 200;
-    font-size: 0.875em;
+    font-size: .875em;
   }
 }
 
@@ -75,10 +76,10 @@
     margin-bottom: 1.5rem;
     text-indent: 1.5rem;
     &::first-letter {
+      margin-right: 2px;
       font-weight: 700;
       font-size: 150%;
       line-height: 1.5rem;
-      margin-right: 2px;
     }
   }
 }
@@ -86,67 +87,73 @@
 .figure-hover {
   box-shadow: none;
   transform: scale(1);
-  transition: 0.4s all;
+  transition: .4s all;
   &:hover {
+    box-shadow: 0 .25rem 1rem rgba(#000, .3);
     transform: scale(1.0125);
-    box-shadow: 0 0.25rem 1rem rgba(#000, 0.3);
   }
 }
 
 .gallery-item {
   display: inline-block;
-  break-inside: avoid;
-  page-break-inside: avoid;
   margin: 0;
-  margin-bottom: $gutter * 0.5;
+  margin-bottom: $gutter * .5;
+  page-break-inside: avoid;
   box-shadow: none;
-  filter: brightness(0.9);
+  filter: brightness(.9);
   transition-property: transform, opacity, filter, box-shadow !important;
+  break-inside: avoid;
 
   &:hover {
+    box-shadow: 0 0 8px rgba(#000, .25);
     filter: brightness(1);
-    box-shadow: 0 0 8px rgba(#000, 0.25);
   }
+
   @media (min-width: 480px) {
-    width: calc(50% - $gutter * 0.5);
-    margin-left: $gutter * 0.25;
-    margin-right: $gutter * 0.25;
+    width: calc(50% - $gutter * .5);
+    margin-right: $gutter * .25;
+    margin-left: $gutter * .25;
   }
+
   @include media-breakpoint-up(md) {
-    width: calc(25% - $gutter * 0.5);
+    width: calc(25% - $gutter * .5);
   }
   @include media-breakpoint-up(lg) {
-    width: calc(100% / 7 - $gutter * 0.5);
+    width: calc(100% / 7 - $gutter * .5);
   }
 }
 
 .post-img {
   margin-bottom: 1rem;
+
   @include media-breakpoint-up(md) {
     float: left;
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
     max-width: 25%;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
   }
 }
+
 .blank-wrapper {
-  margin-top: -4rem; //64px
-  height: 100svh;
   width: 100svw;
+  height: 100svh;
+  margin-top: -4rem; //64px
   overflow: hidden;
 }
+
 .custom-html-slide {
   position: absolute;
-  font-size: calc(1.5rem + 1vh);
-  line-height: 1.2;
-  color: #fff;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 67%;
   height: auto;
+  color: #fff;
+  font-size: calc(1.5rem + 1vh);
+  line-height: 1.2;
   text-align: center;
+  transform: translate(-50%, -50%);
 }
+
 .custom-html-slide a {
   color: #fff;
   text-decoration: underline;

@@ -1,0 +1,61 @@
+{% extends "layouts/main.twig" %}
+{% set title = "Play" %}
+{% set pageheader = "Video" %}
+{# ••• #}
+{% block head %}
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
+{% endblock %}
+{% block header %}
+	{% include 'partials/svgsprite.twig' %}
+	{{ parent() }}
+{% endblock %}
+{% block main %}
+	<main class="container">
+		<div class="row">
+
+			<div class="col-12 my-4">
+				<div
+					class="col-10 mx-auto">
+					{# HTML5 Video #}
+					<p>
+						<a href="https://plyr.io/" target="_blank">Plyr video player</a>
+						/
+						<a href="https://unpkg.com/browse/plyr@3.7.8/dist/" target="_blank">dist</a>
+					</p>
+					<video id="player" width="960" height="540" controls playsinline>
+						<source src="/assets/video/1166313_Woman_Smiling_1280x720.mp4" type="video/mp4"/>
+					</video>
+				</div>
+			</div>
+
+			<div class="col-12 my-4">
+				<div class="col-10 mx-auto">
+					<p>Vimeo</p>
+					<div style="padding:56.25% 0 0 0;position:relative;">
+						<iframe src="https://player.vimeo.com/video/591793349?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Vogue Russia &quot;New Beginnings&quot;"></iframe>
+					</div>
+					<script src="https://player.vimeo.com/api/player.js"></script>
+				</div>
+			</div>
+
+			<div class="col-12 my-4">
+				<div class="col-10 mx-auto">
+					<p>Rutube</p>
+					{# lite-rutube videoid #}
+					<lite-rutube videoid="2a85dc429ed9a39a174d396abdecb8a8"></lite-rutube>
+					{# <iframe width="720" height="405" src="https://rutube.ru/play/embed/2a85dc429ed9a39a174d396abdecb8a8" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen ></iframe> #}
+				</div>
+			</div>
+
+		</div>
+	</main>
+{% endblock %}
+{% block footer %}
+	{{ parent() }}
+{% endblock %}
+{% block addons %}
+	<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+	<script>
+		const player = new Plyr('#player');
+	</script>
+{% endblock %}

@@ -2,23 +2,22 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Mockup •
-			{{ title }}</title>
+		<title>{{ title }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link rel="icon" href="/images/favicon.png" type="image/png"/>
+		<link rel="icon" href="/assets/images/favicon.png" type="image/png"/>
 		<script type="module" src="/src/scripts/main.ts"></script>
+		{% block head %}{% endblock %}
 	</head>
 	<body>
-		{% include '../partials/svgsprite.twig' %}
-		<!-- display content -->
-		{% include '../partials/header.twig' %}
+		{% block header %}
+			{% include '../partials/header.twig' %}
+		{% endblock %}
 		{% block main %}
 			This is the default main content
 		{% endblock %}
-		{% include '../partials/footer.twig' %}
-		<!-- /display content -->
-		{% block addons %}
-			{% include '../partials/popshare.twig' %}
+		{% block footer %}
+			{% include '../partials/footer.twig' %}
 		{% endblock %}
+		{% block addons %}{% endblock %}
 	</body>
 </html>

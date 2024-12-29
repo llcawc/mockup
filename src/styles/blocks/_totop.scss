@@ -5,38 +5,38 @@ $bott: 90px;
 $righ: 20px;
 
 #scrolltotop {
-  background-color: rgba($accent, 0.5);
-  opacity: 0;
-  transition: background-color 0.4s, box-shadow 0.4s, opacity 1.2s ease;
-  bottom: $bott;
+  position: fixed;
   right: $righ;
+  bottom: $bott;
+  z-index: 199;
   width: 40px;
   height: 40px;
+  background-color: rgba($accent, .5);
   border-radius: 4px;
-  position: fixed;
-  z-index: 199;
+  opacity: 0;
+  transition: background-color .4s, box-shadow .4s, opacity 1.2s ease;
 
   svg {
-    stroke: #fff;
     width: 24px;
     height: 24px;
-    margin: (40px - 24px) * 0.5;
+    margin: (40px - 24px) * .5;
+    stroke: #fff;
   }
 
   &:hover {
     background-color: $accent;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
   }
 
   &:active {
-    transform: scale(0.95);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+    transform: scale(.95);
   }
 
   &.on {
+    cursor: pointer;
     opacity: 1 !important;
     animation: up 1.2s ease;
-    cursor: pointer;
   }
 
   &.down {
@@ -58,7 +58,6 @@ $righ: 20px;
     transform: rotate(360deg);
   }
 }
-
 @keyframes down {
   0% {
     transform: rotate(0deg);
@@ -66,15 +65,15 @@ $righ: 20px;
   }
 
   70% {
-    opacity: 1;
     bottom: $bott;
     transform: rotate(-360deg);
+    opacity: 1;
   }
 
   100% {
-    opacity: 0;
     bottom: 0;
     transform: rotate(-360deg);
+    opacity: 0;
   }
 }
 

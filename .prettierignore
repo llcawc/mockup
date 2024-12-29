@@ -1,3 +1,4 @@
 # Ignore files:
-**/_pswp.*
-**/_variables.*
+dist/**/*.*
+vendor/**/*.*
+src/**/*.scss

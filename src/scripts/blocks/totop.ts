@@ -11,7 +11,7 @@ function eventScrollToTop() {
   }
 
   window.addEventListener('scroll', function () {
-    let counter = this.scrollY
+    const counter = this.scrollY
     if (counter > metka) {
       arrowUp.classList.add('on')
       arrowUp.classList.remove('down')
@@ -46,8 +46,8 @@ function scrollToTopLoader() {
 
 // Запуск кнопки scrollToTop после полной загрузки DOM для экранов с viwport более 340px
 document.addEventListener('DOMContentLoaded', () => {
-  let intViewportWidth = window.innerWidth // viwport X
-  let intViewportHeight = window.innerHeight // viewport Y
+  const intViewportWidth = window.innerWidth // viwport X
+  // const intViewportHeight = window.innerHeight // viewport Y
   if (intViewportWidth >= 340) {
     scrollToTopLoader()
     eventScrollToTop()

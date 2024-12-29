@@ -3,17 +3,19 @@
 
 // Import our custom CSS
 import '../styles/main.scss'
-import '../styles/fonts.scss'
+
+// --- import jQuery module  (npm i jquery) ---
+// import $ from 'jquery'
+// window.jQuery = $
+// window.$ = $
 
 // import custon js module
 import './blocks/menu'
-import './blocks/year'
 import './blocks/totop'
+import './blocks/lightbox'
 import './blocks/switcher'
-// import './blocks/pswp'
-import './blocks/share'
 import './blocks/gallery'
-import './blocks/boots'
-import './blocks/lightbox.js'
+import './blocks/bootstrap'
+import './blocks/rutube'
 
 console.log('programm running ...')

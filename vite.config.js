@@ -1,7 +1,8 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import vituum from 'vituum'
 import twig from '@vituum/vite-plugin-twig'
 import dataSite from './src/data/site'
+const __dirname = resolve()
 
 export default {
   publicDir: 'public',
@@ -21,8 +22,8 @@ export default {
     rollupOptions: {
       input: ['./src/pages/**/*.{json,twig,html}', '!./src/pages/**/*.twig.json', './src/scripts/*.{js,ts,mjs}'],
       output: {
-        entryFileNames: 'js/[name].js',
-        chunkFileNames: 'js/[name].js',
+        entryFileNames: 'assets/js/[name].js',
+        chunkFileNames: 'assets/js/[name].js',
         assetFileNames: getFileName,
       },
     },
@@ -42,5 +43,5 @@ function getFileName(assetInfo) {
     extType = 'fonts'
   }
 
-  return `${extType}/[name][extname]`
+  return `assets/${extType}/[name][extname]`
 }

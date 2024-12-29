@@ -4,8 +4,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   let scrolling = false
   let previousTop = 0
-  let scrollDelta = 10
-  let scrollOffset = 250
+  const scrollDelta = 10
+  const scrollOffset = 250
 
   document.addEventListener('scroll', () => {
     if (!scrolling) {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   function autoHideHeader() {
-    let currentTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop
+    const currentTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop
     const header: HTMLElement | null = document.querySelector('.nav-autohide')
     if (!header) {
       console.log('Attension! Selector ".nav-autohide" not found!')
