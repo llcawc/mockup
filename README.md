@@ -1,48 +1,48 @@
-# Mockup Starter template
+# Стартовый шаблон "Mockup"
 
-_Version 0.0.3 Date 24.12.21_
+_Версия 0.0.4 от 24.12.29_
 
-Starter template for a multi-page site using Vite, Gulp, SASS/Bootstrap, Image minify. FrontEnd based on Twig templating engine. Includes social sharing button code.
+Стартовый шаблон для многостраничного сайта на базе шаблонизатора twig. Рендериг и сборка сервера на Vite. Код CSS с исползованием SASS/Bootstrap. Код JS компилирутся из typescript. Включено минификация изображений, CSS и Html с помощью Gulp. Да и много всего еще.
 
-## Getting started
+## Предварительная подготовка
 
-Install the [node](https://nodejs.org) and any package manager, clone this repository in project folder and type this command into the wsl or mac terminal:
-
-```
-npm install
-```
-
-Default directory:
-
-- For development source files: `src`,
-- For server and production: `dist` (will be created after run "build")
-
-## Commands
-
-### Develop in browser, watching files and live server reload.
-
-_You can open this in any browser: `http://localhost:8080`_
+Надо инсталировать зависимости NodeJS
 
 ```
-npm run dev
+pnpm install
 ```
 
-### Building files for production.
+Директории для работы:
+
+- Для исходного кода: `src` и `public`,
+- Для скомпилированного кода: `dist` (папка будет создана после запуска команды "build")
+
+## Команды
+
+### Разработка и просмотр в браузере с живой перезагрузкой на базе Vite.
+
+_Адрес сервера разработки: `http://localhost:8080`_
 
 ```
-npm run build
+pnpm dev
 ```
 
-### Run server (if "dist" exist :) in browser.
+### Сборка для производственной среды.
 
 ```
-npm run serve
+pnpm build
 ```
 
-## Settings
+### Запуск производственного кода на сервере.
 
-Use `package.json` and config files for change settings.
+```
+pnpm serve
+```
+
+## Настройки и опции
+
+Смотреть `package.json` и файлы конфигурации.
 
 ---
 
-MIT License ©2024 pasmurno by [llcawc](https://github.com/llcawc). Made with <span style="color:red;">❤</span> to beautiful architecture
+MIT License ©2024 pasmurno из [llcawc](https://github.com/llcawc). Сделано <span style="color:red;">❤</span> прекрасной архитектуре.
