@@ -1,15 +1,15 @@
-import { resolve } from 'node:path'
+import { resolve, join } from 'node:path'
 import vituum from 'vituum'
 import twig from '@vituum/vite-plugin-twig'
 import dataSite from './src/data/site'
 const __dirname = resolve()
 
 export default {
-  publicDir: 'public',
+  publicDir: join(__dirname, 'public'),
   plugins: [
     vituum(),
     twig({
-      root: resolve(__dirname, 'src'),
+      root: join(__dirname, 'src'),
       globals: {
         site: dataSite,
       },

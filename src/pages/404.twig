@@ -1,6 +1,7 @@
 {% extends "layouts/main.twig" %}
-{% set title = "404" %}
-{% set pageheader = "Error 404" %}
+{% set N = 4 %}
+{% set page = site.pages[N].page %}
+{% set title = site.pages[N].title %}
 {# ••• #}
 {% block header %}{% endblock %}
 {% block main %}

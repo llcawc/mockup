@@ -20,7 +20,7 @@
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@types/bootstrap": "^5.2.10",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.5",
     "@vituum/vite-plugin-twig": "^1.1.0",
     "del": "^8.0.0",
     "eslint": "^9.17.0",
@@ -29,6 +29,9 @@
     "gulp-hmin": "github:llcawc/gulp-hmin",
     "gulp-img": "github:llcawc/gulp-img",
     "gulp-purgecss": "^7.0.2",
+    "prettier": "^3.4.2",
+    "prettier-plugin-embed": "^0.4.15",
+    "prettier-plugin-organize-imports": "^4.1.0",
     "sass": "1.77.4",
     "stylelint": "^16.12.0",
     "stylelint-config-clean-order": "^6.1.0",
@@ -38,8 +41,8 @@
     "stylelint-config-twbs-bootstrap": "^15.1.0",
     "stylelint-order": "^6.0.4",
     "stylelint-scss": "^6.10.0",
-    "typescript-eslint": "^8.18.2",
-    "vite": "^6.0.6",
+    "typescript-eslint": "^8.19.1",
+    "vite": "^6.0.7",
     "vituum": "^1.1.1"
   },
   "dependencies": {

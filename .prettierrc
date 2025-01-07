@@ -14,5 +14,6 @@
         "jsxSingleQuote": true
       }
     }
-  ]
+  ],
+  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-embed"]
 }

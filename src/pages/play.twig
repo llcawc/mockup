@@ -1,6 +1,8 @@
 {% extends "layouts/main.twig" %}
-{% set title = "Play" %}
-{% set pageheader = "Video" %}
+{% set N = 2 %}
+{% set page = site.pages[N].page %}
+{% set title = site.pages[N].title %}
+{% set header = site.pages[N].header %}
 {# ••• #}
 {% block head %}
 	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>

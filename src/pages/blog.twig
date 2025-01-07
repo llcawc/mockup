@@ -1,6 +1,8 @@
 {% extends "layouts/main.twig" %}
-{% set title = "Mockup • Blog" %}
-{% set pageheader = "BLOG" %}
+{% set N = 1 %}
+{% set page = site.pages[N].page %}
+{% set title = site.pages[N].title %}
+{% set header = site.pages[N].header %}
 {# ••• #}
 {% block header %}
 	{% include 'partials/svgsprite.twig' %}

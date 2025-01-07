@@ -1,6 +1,8 @@
 {% extends "layouts/main.twig" %}
-{% set title = "Contacts" %}
-{% set pageheader = "CONTACTS" %}
+{% set N = 3 %}
+{% set page = site.pages[N].page %}
+{% set title = site.pages[N].title %}
+{% set header = site.pages[N].header %}
 {# ••• #}
 {% block header %}
 	{% include 'partials/svgsprite.twig' %}

@@ -1,6 +1,8 @@
 {% extends "layouts/main.twig" %}
-{% set title = "Mockup • Home" %}
-{% set pageheader = "Mockup Template" %}
+{% set N = 0 %}
+{% set page = site.pages[N].page %}
+{% set title = site.pages[N].title %}
+{% set header = site.pages[N].header %}
 {# ••• #}
 {% block head %}
 	{{ parent() }}
@@ -22,7 +24,7 @@
 
 			<div class="col-12 col-lg-6 d-flex justify-content-between flex-column position-relative">
 
-				<h1>HELLO WORLD!</h1>
+				<h1>{{ site.value }}</h1>
 				<h3>Welcome to yours new Starter template for a multi-page site!</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit nulla alias expedita a qui, pariatur doloremque ipsa fugit laboriosam odio iure recusandae laborum delectus praesentium magni reiciendis voluptatem. Sed.</p>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eligendi ab temporibus delectus quaerat officia, magni corporis amet, deserunt natus, excepturi commodi deleniti quasi nisi. Ut tempora porro illo iusto asperiores quidem enim voluptatem eaque repudiandae vel. Modi, earum atque. Suscipit excepturi inventore illo expedita ducimus animi ipsa est ad.</p>
