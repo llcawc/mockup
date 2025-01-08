@@ -1,17 +1,19 @@
 {% extends "layouts/main.twig" %}
-{% set N = 1 %}
-{% set page = site.pages[N].page %}
-{% set title = site.pages[N].title %}
-{% set header = site.pages[N].header %}
-{# ••• #}
+
+{% block var %}
+	{% set page = 'blog' %}
+	{{ parent() }}
+{% endblock %}
+
 {% block header %}
 	{% include 'partials/svgsprite.twig' %}
 	{{ parent() }}
 {% endblock %}
+
 {% block main %}
 	<main class="container-md">
 		<div class="row">
-			<section class="col-sm-12 mt-2 mb-3">
+			<section class="col-sm-12 mt-4 mb-8">
 				<p>
 					<span class="pe-3">18 августа 2021г.</span>
 					<span>
@@ -31,7 +33,7 @@
 					</a>
 				</p>
 			</section>
-			<section class="col-sm-12 mb-3">
+			<section class="col-sm-12 mb-8">
 				<p>
 					<span class="pe-3">10 июля 2021г.</span>
 					<span>
@@ -51,7 +53,7 @@
 					</a>
 				</p>
 			</section>
-			<section class="col-sm-12 mb-3">
+			<section class="col-sm-12 mb-8">
 				<p>
 					<span class="pe-3">18 июня 2021г.</span>
 					<span>
@@ -71,7 +73,7 @@
 					</a>
 				</p>
 			</section>
-			<section class="col-sm-12 mb-3">
+			<section class="col-sm-12 mb-8">
 				<p>
 					<span class="pe-3">6 мая 2021г.</span>
 					<span>
@@ -91,7 +93,7 @@
 					</a>
 				</p>
 			</section>
-			<section class="col-sm-12 mb-3">
+			<section class="col-sm-12 mb-8">
 				<p>
 					<span class="pe-3">24 апреля 2021г.</span>
 					<span>
@@ -111,7 +113,7 @@
 					</a>
 				</p>
 			</section>
-			<section class="col-sm-12 mb-3">
+			<section class="col-sm-12 mb-8">
 				<p>
 					<span class="pe-3">15 марта 2021г.</span>
 					<span>
@@ -135,7 +137,3 @@
 		</div>
 	</main>
 {% endblock %}
-{% block footer %}
-	{{ parent() }}
-{% endblock %}
-{% block addons %}{% endblock %}

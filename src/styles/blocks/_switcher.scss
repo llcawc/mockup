@@ -1,5 +1,6 @@
 // _switcher.scss
 // стили переключателя цветовых тем
+@use "bootstrap" as boot;
 
 .switcher-dropdown {
   display: flex;
@@ -10,7 +11,7 @@
     height: 1em;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include boot.media-breakpoint-up(lg) {
     margin-bottom: 2px;
   }
 }
@@ -26,10 +27,10 @@
   border: 0;
   border-radius: .375rem;
   &::after {
-    color: $textcolor;
+    color: boot.$textcolor;
   }
   svg {
-    color: $textcolor;
+    color: boot.$textcolor;
   }
 }
 
@@ -46,32 +47,31 @@
   }
 
   .dropdown-item {
-    color: $darkcolor;
+    color: boot.$darkcolor;
     border-radius: .375rem;
     &:active {
-      background-color: $accent;
+      background-color: boot.$accent;
     }
   }
 
   .active {
-    color: $lightcolor;
+    color: boot.$lightcolor;
     font-weight: 700;
-    background-color: $accent;
+    background-color: boot.$accent;
     .icon {
       display: block !important; // stylelint-disable-line declaration-no-important
     }
   }
-
 }
 
 .switcher-dropdown .dropdown-menu *:focus-visible {
   border-radius: 4px;
-  outline: 4px solid rgba($accent, .5) !important;
+  outline: 4px solid rgba(boot.$accent, .5) !important;
   box-shadow: none !important;
 }
 
 [data-bs-theme="dark"] {
   .switcher-dropdown .dropdown-menu .dropdown-item {
-    color: $lightcolor;
+    color: boot.$lightcolor;
   }
 }

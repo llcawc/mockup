@@ -1,20 +1,18 @@
 {% extends "layouts/main.twig" %}
-{% set N = 0 %}
-{% set page = site.pages[N].page %}
-{% set title = site.pages[N].title %}
-{% set header = site.pages[N].header %}
-{# ••• #}
-{% block head %}
+
+{% block var %}
+	{% set page = 'index' %}
 	{{ parent() }}
 {% endblock %}
+
 {% block header  %}
 	{% include 'partials/svgsprite.twig' %}
 	{{ parent() }}
 {% endblock %}
+
 {% block main %}
 	<main class="container-md">
-
-		<div class="row mb-5">
+		<div class="row mt-7">
 			<div class="col-12 col-lg-6 mb-4 mb-lg-0">
 				<figure class="w-100 h-100 figure-hover photo-gallery">
 					<a data-size="1280x853" href="/assets/images/preview.jpg"><img class="w-100 h-100" src="/assets/images/preview.jpg" alt="Starter Template - Saint Petersburg"/></a>
@@ -38,7 +36,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row mt-8">
 			<section
 				class="col-sm-12">
 				{# lightbox gallery #}
@@ -71,7 +69,7 @@
 			</section>
 		</div>
 
-		<div class="row content">
+		<div class="row content mt-8">
 			<div class="col-sm-12 col-lg-4">
 				<h3>Petrificus Totales</h3>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita exercitationem illo a dolorem nulla delectus eos enim facilis voluptatem quis nisi beatae molestias amet, nobis quia magni deleniti dolorum eum quos sint itaque dolor, quibusdam harum! Voluptas eos placeat hic, sit consectetur quisquam cupiditate dicta mollitia labore, tenetur voluptate ipsam fuga a dolor accusamus soluta, tempore iste? Cum sapiente sequi, quasi nemo inventore molestiae omnis. Accusamus commodi laudantium itaque necessitatibus dicta illo voluptatem molestias harum sit excepturi eius neque esse pariatur in libero, delectus assumenda dolorum. In commodi, nemo rerum, provident est totam quis ullam ab, rem minima veniam iure.</p>
@@ -103,4 +101,3 @@
 		</div>
 	</main>
 {% endblock %}
-{% block addons %}{% endblock %}

@@ -1,3 +1,16 @@
+{% block var %}
+	{% set title = '☺' %}
+	{% set header = '☺' %}
+	{% set icon = '☺' %}
+	{% for item in site.pages %}
+		{% if page == item.page %}
+			{% set title = item.title %}
+			{% set header = item.header %}
+			{% set icon = item.bi %}
+		{% endif %}
+	{% endfor %}
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="ru">
 	<head>

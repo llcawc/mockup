@@ -1,12 +1,17 @@
 {% extends "layouts/main.twig" %}
-{% set page = "post" %}
-{% set title = "Post" %}
-{% set header = "Cool Post" %}
-{# ••• #}
+
+{% block var %}
+	{% set page = "post" %}
+	{% set title = "Post" %}
+	{% set header = "Cool Post" %}
+	{% set icon = "bi-pencil-square" %}
+{% endblock %}
+
 {% block header  %}
 	{% include 'partials/svgsprite.twig' %}
 	{{ parent() }}
 {% endblock %}
+
 {% block main %}
 	<main class="container-md my-5">
 		<div class="row">
@@ -45,7 +50,3 @@
 		</div>
 	</main>
 {% endblock %}
-{% block footer %}
-	{{ parent() }}
-{% endblock %}
-{% block addons %}{% endblock %}

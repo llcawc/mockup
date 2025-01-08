@@ -1,15 +1,15 @@
 // main.scss
 
 // load frameworks and font
-@import "blocks/bootstrap";
-@import "blocks/bootstrap-icons";
-@import "blocks/fonts";
+@use "blocks/bootstrap";
+@use "blocks/bootstrap-icons";
+@use "blocks/fonts";
 
 // page styles
-@import "blocks/config";
-@import "blocks/styles";
+@use "blocks/config";
+@use "blocks/styles";
 
 // plagins styles
-@import "blocks/totop";
-@import "blocks/switcher";
-@import "blocks/lightbox";
+@use "blocks/totop";
+@use "blocks/switcher";
+@use "blocks/lightbox";

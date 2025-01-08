@@ -1,4 +1,5 @@
 // styles.scss - common pages styles
+@use "bootstrap" as boot;
 
 .nav-autohide {
   min-height: 4.5rem; // 72px
@@ -33,20 +34,20 @@
   text-decoration: underline;
   text-decoration-thickness: 4px;
   text-decoration-style: solid;
-  text-decoration-color: $accent;
+  text-decoration-color: boot.$accent;
   text-underline-position: under;
 }
 
 .section {
-  margin: $gutter auto;
-  padding: ($gutter * .5) 0;
+  margin: 2.5rem auto;
+  padding: 1rem 0;
   text-align: center;
-  background-color: $gray-100;
+  background-color: #f8f9fa;
 }
 
-@include color-mode(dark) {
+@include boot.color-mode(dark) {
   .section {
-    background-color: $gray-800;
+    background-color: #343a40;
   }
 }
 
@@ -97,7 +98,7 @@
 .gallery-item {
   display: inline-block;
   margin: 0;
-  margin-bottom: $gutter * .5;
+  margin-bottom: boot.$gutter * .5;
   page-break-inside: avoid;
   box-shadow: none;
   filter: brightness(.9);
@@ -110,23 +111,23 @@
   }
 
   @media (min-width: 480px) {
-    width: calc(50% - $gutter * .5);
-    margin-right: $gutter * .25;
-    margin-left: $gutter * .25;
+    width: calc(50% - boot.$gutter * .5);
+    margin-right: boot.$gutter * .25;
+    margin-left: boot.$gutter * .25;
   }
 
-  @include media-breakpoint-up(md) {
-    width: calc(25% - $gutter * .5);
+  @include boot.media-breakpoint-up(md) {
+    width: calc(25% - boot.$gutter * .5);
   }
-  @include media-breakpoint-up(lg) {
-    width: calc(100% / 7 - $gutter * .5);
+  @include boot.media-breakpoint-up(lg) {
+    width: calc(100% / 7 - boot.$gutter * .5);
   }
 }
 
 .post-img {
   margin-bottom: 1rem;
 
-  @include media-breakpoint-up(md) {
+  @include boot.media-breakpoint-up(md) {
     float: left;
     max-width: 25%;
     margin-right: 1rem;

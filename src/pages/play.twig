@@ -1,16 +1,19 @@
 {% extends "layouts/main.twig" %}
-{% set N = 2 %}
-{% set page = site.pages[N].page %}
-{% set title = site.pages[N].title %}
-{% set header = site.pages[N].header %}
-{# ••• #}
+
+{% block var %}
+	{% set page = 'play' %}
+	{{ parent() }}
+{% endblock %}
+
 {% block head %}
 	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
 {% endblock %}
+
 {% block header %}
 	{% include 'partials/svgsprite.twig' %}
 	{{ parent() }}
 {% endblock %}
+
 {% block main %}
 	<main class="container">
 		<div class="row">
@@ -52,9 +55,7 @@
 		</div>
 	</main>
 {% endblock %}
-{% block footer %}
-	{{ parent() }}
-{% endblock %}
+
 {% block addons %}
 	<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 	<script>

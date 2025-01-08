@@ -1,16 +1,18 @@
 // config.scss - general project styles
 
+@use "bootstrap" as boot;
+
 ::placeholder {
-  color: $textcolor;
+  color: boot.$textcolor;
 }
 
 ::selection {
   color: inherit;
-  background-color: rgba(mix(#fff, $accent, 60%), .4);
+  background-color: rgba(mix(#fff, boot.$accent, 60%), .4);
 }
 
 *:focus-visible {
-  outline: 4px solid rgba($accent, .5) !important;
+  outline: 4px solid rgba(boot.$accent, .5) !important;
   box-shadow: none !important;
 }
 

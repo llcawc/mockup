@@ -1,3 +1,4 @@
+/** @type {import('vite').UserConfig} */
 import { resolve, join } from 'node:path'
 import vituum from 'vituum'
 import twig from '@vituum/vite-plugin-twig'

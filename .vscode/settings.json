@@ -14,7 +14,6 @@
     "source.fixAll.eslint": "explicit"
   },
 
-  // подсказки типов
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "literals",

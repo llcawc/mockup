@@ -1,9 +1,12 @@
 {% extends "layouts/main.twig" %}
-{% set N = 4 %}
-{% set page = site.pages[N].page %}
-{% set title = site.pages[N].title %}
-{# ••• #}
+
+{% block var %}
+	{% set page = '404' %}
+	{{ parent() }}
+{% endblock %}
+
 {% block header %}{% endblock %}
+
 {% block main %}
 	<div class="blank-wrapper">
 		<div class="container d-flex h-100 justify-content-center align-items-center">
@@ -13,12 +16,12 @@
 				</div>
 				<div>
 					<h1 class="mb-0">Error 404!</h1>
-					<p class="mb-2">Document not found.</p>
+					<p class="mb-6">Document not found.</p>
 					<a class="btn btn-outline-accent" href="/">Home</a>
 				</div>
 			</section>
 		</div>
 	</div>
 {% endblock %}
+
 {% block footer %}{% endblock %}
-{% block addons %}{% endblock %}

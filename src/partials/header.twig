@@ -4,12 +4,12 @@
 
 			<a class="navbar-brand fw-bold fs-4" href="/">Mockup</a>
 
-			<div class="collapse navbar-collapse justify-content-end me-4" id="navbarNav">
-				<ul class="navbar-nav fs-5 text-end mt-lg-0 mt-2 gap-1">
+			<div class="collapse navbar-collapse justify-content-end me-lg-4" id="navbarNav">
+				<ul class="navbar-nav fs-5 text-end column-gap-2">
 					{% for item in site.pages %}
 						<li class="nav-item">
 							<a href='/{{ item.page }}' class="nav-link {% if item.page == page %} active{% endif %}">
-								<i class="bi bi-{{item.bi}}"></i>&nbsp;{{ item.title }}</a>
+								<i class="bi {{ item.bi }} small"></i>&nbsp;{{ item.title }}</a>
 						</li>
 					{% endfor %}
 				</ul>
@@ -29,7 +29,10 @@
 	<div class="container-md">
 		<div class="row">
 			<div class="col">
-				<h1 class="section display-1">{{ header }}</h1>
+				<h1 class="section display-1">
+					<i class="bi {{ icon }}"></i>
+					<span>{{ header }}</span>
+				</h1>
 			</div>
 		</div>
 	</div>

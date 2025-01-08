@@ -18,13 +18,98 @@
 // Option B: Include parts of Bootstrap
 // Вариант Б. Включите части Bootstrap
 
+// Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
+// Сначала замените переменные, а затем импортируйте только те стили, которые вам нужны. Обратите внимание, что некоторые таблицы стилей необходимы, несмотря ни на что
+
+// Toggle global options
+
+// Prefix for :root CSS variables
+$prefix:                  ps-;
+
+$enable-gradients:        true;
+$enable-shadows:          true;
+
+$offcanvas-box-shadow:    0 1rem 3rem rgba(0, 0, 0, .175);
+
+// Bootstrap compatible gutter variable => $gutter
+$spacer:                  1rem; // 16px
+$spacers: (
+  0: 0,
+  1: $spacer * .25,       //   4px
+  2: $spacer * .5,        //   8px
+  3: $spacer * .75,       //  12px
+  4: $spacer,             //  16px
+  5: $spacer * 1.25,      //  20px
+  6: $spacer * 1.5,       //  24px
+  7: $spacer * 1.875,     //  30px
+  8: $spacer * 3.75,      //  60px
+  9: $spacer * 7.5,       // 120px
+);
+$grid-gutter-width:       1.5rem; //24px
+$gutter:                  $grid-gutter-width;
+
+// Grig - частично данные согласованы с tailwind ... https://tailwindcss.com/docs/breakpoints
+$grid-breakpoints: (
+  xs:          0,
+  sm:      480px,
+  md:      768px,
+  lg:     1024px,
+  xl:     1280px,
+  xxl:    1536px,
+);
+$container-max-widths: (
+  sm:      420px,
+  md:      720px,
+  lg:      960px,
+  xl:     1200px,
+  xxl:    1440px,
+);
+
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 // 1. Сначала включите функции (чтобы Вы могли управлять цветами, SVG, вычислением и т.д.)
 @import "bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
 // 2. Включите сюда любые переопределения переменных по умолчанию
-@import "variables";
+
+// Color
+$accent:                #f58220; // акцентный цвет для выделения
+$textcolor:             #6c757d; // основной цвет текста gray-600
+$darkcolor:             #212529; // основной темный цвет gray-900
+$lightcolor:            #fff;    // основной светлый цвет white
+
+// Settings for the `<body>` element.
+$body-color:              $textcolor;
+$body-bg:                 $lightcolor;
+$body-color-dark:       #dee2e6; // gray-300
+$body-bg-dark:          #212529;
+
+$body-text-align:         left;
+
+// Typography
+$font-family-base:        "ps-Inter", sans-serif;
+$font-family-code:        "ps-JetBrainsMono", monospace;
+$font-size-base:          1rem; // Основной размер шрифта: 16px
+$line-height-base:        1.5; // 24px
+
+// Components
+// Style anchor elements.
+$link-color:              $accent;
+$link-color-dark:         $accent; // tint-color($accent, 40%);
+$link-decoration:         none;
+$link-shade-percentage:   20%;
+$link-hover-color:        shift-color($link-color, $link-shade-percentage);
+$link-hover-color-dark:   shift-color($link-color-dark, -$link-shade-percentage);
+$link-hover-decoration:   null; // or underline, or none;
+
+// Transition
+$transition-base:         all .25s;
+
+// Headings
+$headings-font-weight:    700;
+$headings-color:          $darkcolor;
+$headings-color-dark:     $lightcolor;
+$headings-margin-bottom:  1.2rem;
 
 // 3. Include remainder of required Bootstrap stylesheets
 // 3. Включите оставшуюся часть необходимых таблиц стилей Bootstrap

@@ -1,13 +1,15 @@
 {% extends "layouts/main.twig" %}
-{% set N = 3 %}
-{% set page = site.pages[N].page %}
-{% set title = site.pages[N].title %}
-{% set header = site.pages[N].header %}
-{# ••• #}
+
+{% block var %}
+	{% set page = 'contacts' %}
+	{{ parent() }}
+{% endblock %}
+
 {% block header %}
 	{% include 'partials/svgsprite.twig' %}
 	{{ parent() }}
 {% endblock %}
+
 {% block main %}
 	<main class="container-md flex-grow-1">
 		<div class="row row-cols-2 pt-5 pb-4">
@@ -36,7 +38,3 @@
 		</div>
 	</main>
 {% endblock %}
-{% block footer %}
-	{{ parent() }}
-{% endblock %}
-{% block addons %}{% endblock %}
