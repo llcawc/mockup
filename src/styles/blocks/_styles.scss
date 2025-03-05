@@ -26,15 +26,15 @@
 
 .nav-switch {
   display: flex;
-  margin-left: auto;
   column-gap: 2rem;
+  margin-left: auto;
 }
 
 .nav-link.active {
   text-decoration: underline;
-  text-decoration-thickness: 4px;
-  text-decoration-style: solid;
   text-decoration-color: boot.$accent;
+  text-decoration-style: solid;
+  text-decoration-thickness: 4px;
   text-underline-position: under;
 }
 
@@ -57,18 +57,21 @@
   margin-left: 2.5rem;
   font-style: italic;
   &::before {
+    content: "";
+
     position: absolute;
     top: .5rem;
     left: -2.5rem;
+
     width: 2rem;
     height: 2rem;
+
     background: url("/assets/images/pen.svg") center/cover no-repeat;
-    content: "";
   }
   p {
     margin-top: .5rem;
-    font-weight: 200;
     font-size: .875em;
+    font-weight: 200;
   }
 }
 
@@ -78,36 +81,40 @@
     text-indent: 1.5rem;
     &::first-letter {
       margin-right: 2px;
-      font-weight: 700;
       font-size: 150%;
+      font-weight: 700;
       line-height: 1.5rem;
     }
   }
 }
 
 .figure-hover {
-  box-shadow: none;
   transform: scale(1);
+  box-shadow: none;
   transition: .4s all;
   &:hover {
-    box-shadow: 0 .25rem 1rem rgba(#000, .3);
     transform: scale(1.0125);
+    box-shadow: 0 .25rem 1rem rgba(#000, .3);
   }
 }
 
 .gallery-item {
   display: inline-block;
-  margin: 0;
-  margin-bottom: boot.$gutter * .5;
-  page-break-inside: avoid;
-  box-shadow: none;
-  filter: brightness(.9);
-  transition-property: transform, opacity, filter, box-shadow !important;
   break-inside: avoid;
 
+  margin: 0;
+  margin-bottom: boot.$gutter * .5;
+
+  filter: brightness(.9);
+  box-shadow: none;
+
+  transition-property: transform, opacity, filter, box-shadow !important;
+
+  page-break-inside: avoid;
+
   &:hover {
-    box-shadow: 0 0 8px rgba(#000, .25);
     filter: brightness(1);
+    box-shadow: 0 0 8px rgba(#000, .25);
   }
 
   @media (min-width: 480px) {
@@ -136,23 +143,25 @@
 }
 
 .blank-wrapper {
+  overflow: hidden;
   width: 100svw;
   height: 100svh;
   margin-top: -4rem; //64px
-  overflow: hidden;
 }
 
 .custom-html-slide {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+
   width: 67%;
   height: auto;
-  color: #fff;
+
   font-size: calc(1.5rem + 1vh);
   line-height: 1.2;
+  color: #fff;
   text-align: center;
-  transform: translate(-50%, -50%);
 }
 
 .custom-html-slide a {

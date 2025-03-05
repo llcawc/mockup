@@ -1,12 +1,12 @@
 // gulpfile.js • mockup • pasmurno by llcawc • https://github.com/llcawc
 
 // import modules
-import gulp from 'gulp'
-import imagemin from 'gulp-img'
-import purgecss from 'gulp-purgecss'
-import { deleteAsync as del } from 'del'
+import { src, dest, parallel, series, watch } from 'gulp'
+import imagemin from 'psimage'
+import { deleteAsync } from 'del'
+import licss from 'licss'
 import htmlmin from 'gulp-hmin'
-const { src, dest, parallel, series, watch } = gulp
+
 const purge = {
   content: [
     'src/**/*.{ts,js,twig,html}',
@@ -27,9 +27,21 @@ function images() {
     .pipe(dest('public/assets/images'))
 }
 
+// video task
+function video() {
+  return src(['src/assets/video/*.*'], { encoding: false }).pipe(dest('public/assets/video'))
+}
+
 // purge styles
-function styles() {
-  return src('dist/assets/css/main.css').pipe(purgecss(purge)).pipe(dest('dist/assets/css'))
+function css() {
+  return src('src/styles/*.scss', { sourcemaps: true })
+    .pipe(licss({ purgeOptions: purge }))
+    .pipe(dest('dist/assets/css', { sourcemaps: '.' }))
+}
+async function styles() {
+  return src(['dist/assets/css/*.css'])
+    .pipe(licss({ minify: true, purgeOptions: purge }))
+    .pipe(dest('dist/assets/css'))
 }
 
 function copy() {
@@ -53,18 +65,19 @@ function hmin() {
 }
 
 // clean task
-function clean() {
-  return del(['public/assets/*'], {
+async function clean() {
+  return await deleteAsync(['public/assets/*'], {
     force: true,
   })
 }
 
 function watcher() {
+  watch('src/styles/**/*.{css,sass,scss}', css)
   watch('src/assets/images/**/*.*', images)
   watch('src/assets/fonts/**/*.*', copy)
 }
 
-export { clean, copy, images, styles, hmin }
+export { clean, copy, images, video, css, styles, hmin }
 export const minify = parallel(styles, hmin)
-export const assets = series(clean, copy, images)
+export const assets = series(clean, copy, images, video)
 export const dev = parallel(assets, watcher)

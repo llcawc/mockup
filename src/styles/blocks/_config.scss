@@ -31,12 +31,14 @@ textarea {
 
 body {
   position: relative;
+
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
+
   min-width: 320px;
   min-height: 100svh;
   padding-top: 4rem; //64px
-  overflow-x: hidden;
 }
 
 img {
@@ -48,9 +50,11 @@ img {
 
 .hidden {
   display: none;
+
   width: .001px;
   height: .001px;
   margin: 0;
   padding: 0;
+
   visibility: hidden;
 }

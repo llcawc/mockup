@@ -1,8 +1,11 @@
 {
-  "extends": ["stylelint-config-twbs-bootstrap", "stylelint-config-clean-order", "stylelint-config-rational-order"],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-twbs-bootstrap", "stylelint-config-clean-order"],
   "plugins": ["stylelint-scss"],
   "rules": {
-    "at-rule-empty-line-before": ["always", { "except": ["after-same-name"], "ignore": ["after-comment"] }],
+    "at-rule-empty-line-before": [
+      "always",
+      { "except": ["after-same-name"], "ignore": ["after-comment", "first-nested"] }
+    ],
     "declaration-block-no-redundant-longhand-properties": [true, { "ignoreShorthands": ["inset"] }],
     "font-family-name-quotes": "always-unless-keyword",
     "at-rule-no-unknown": null,

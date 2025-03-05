@@ -20,12 +20,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin: 0;
   padding: .375rem;
-  text-decoration: none;
-  background-color: transparent;
   border: 0;
   border-radius: .375rem;
+
+  text-decoration: none;
+
+  background-color: transparent;
   &::after {
     color: boot.$textcolor;
   }
@@ -38,6 +41,7 @@
   top: 100%;
   right: 0;
   left: auto;
+
   min-height: 7rem;
   padding: .125rem;
   border-radius: .5rem;
@@ -47,16 +51,16 @@
   }
 
   .dropdown-item {
-    color: boot.$darkcolor;
     border-radius: .375rem;
+    color: boot.$darkcolor;
     &:active {
       background-color: boot.$accent;
     }
   }
 
   .active {
-    color: boot.$lightcolor;
     font-weight: 700;
+    color: boot.$lightcolor;
     background-color: boot.$accent;
     .icon {
       display: block !important; // stylelint-disable-line declaration-no-important

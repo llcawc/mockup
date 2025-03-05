@@ -7,14 +7,17 @@ $righ: 20px;
 
 #scrolltotop {
   position: fixed;
+  z-index: 199;
   right: $righ;
   bottom: $bott;
-  z-index: 199;
+
   width: 40px;
   height: 40px;
-  background-color: rgba(boot.$accent, .5);
   border-radius: 4px;
+
   opacity: 0;
+  background-color: rgba(boot.$accent, .5);
+
   transition: background-color .4s, box-shadow .4s, opacity 1.2s ease;
 
   svg {
@@ -30,8 +33,8 @@ $righ: 20px;
   }
 
   &:active {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
     transform: scale(.95);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
   }
 
   &.on {

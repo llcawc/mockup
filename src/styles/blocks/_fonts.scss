@@ -4,11 +4,11 @@
 @mixin font($fname, $fstyle, $fweight, $furl) {
 
   @font-face {
-    font-weight: $fweight;
     font-family: $fname;
+    font-weight: $fweight;
     font-style: $fstyle;
-    src: url($furl) format("woff2");
     font-display: swap;
+    src: url($furl) format("woff2");
   }
 }
 
