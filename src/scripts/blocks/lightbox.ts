@@ -1,6 +1,6 @@
 // photoswipe плагин. Кастомный код яваскрипт
-import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import PhotoSwipe from 'photoswipe'
+import PhotoSwipeLightbox from 'photoswipe/lightbox'
 
 /**
  * Открыть лайтбокс галереи с селектором "photo-gallery"

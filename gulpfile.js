@@ -1,11 +1,11 @@
 // gulpfile.js • mockup • pasmurno by llcawc • https://github.com/llcawc
 
 // import modules
-import { src, dest, parallel, series, watch } from 'gulp'
-import imagemin from 'psimage'
 import { deleteAsync } from 'del'
-import licss from 'licss'
+import { dest, parallel, series, src, watch } from 'gulp'
 import htmlmin from 'gulp-hmin'
+import licss from 'licss'
+import imagemin from 'psimage'
 
 const purge = {
   content: [
@@ -65,8 +65,8 @@ function hmin() {
 }
 
 // clean task
-async function clean() {
-  return await deleteAsync(['public/assets/*'], {
+function clean() {
+  return deleteAsync(['public/assets/*'], {
     force: true,
   })
 }
@@ -77,7 +77,7 @@ function watcher() {
   watch('src/assets/fonts/**/*.*', copy)
 }
 
-export { clean, copy, images, video, css, styles, hmin }
+export { clean, copy, css, hmin, images, styles, video }
 export const minify = parallel(styles, hmin)
 export const assets = series(clean, copy, images, video)
 export const dev = parallel(assets, watcher)

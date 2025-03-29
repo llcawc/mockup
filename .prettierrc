@@ -3,17 +3,16 @@
   "useTabs": false,
   "endOfLine": "lf",
   "printWidth": 120,
-  "trailingComma": "es5",
-  "bracketSpacing": true,
   "overrides": [
     {
       "files": ["./**/*.{ts,js,jsx,mjs,cjs}"],
       "options": {
         "semi": false,
         "singleQuote": true,
-        "jsxSingleQuote": true
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "plugins": ["prettier-plugin-embed", "prettier-plugin-organize-imports"]
       }
     }
-  ],
-  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-embed"]
+  ]
 }

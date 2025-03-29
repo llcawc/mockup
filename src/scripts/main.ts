@@ -10,12 +10,12 @@ import '../styles/main.scss'
 // window.$ = $
 
 // import custon js module
-import './blocks/menu'
-import './blocks/totop'
-import './blocks/lightbox'
-import './blocks/switcher'
-import './blocks/gallery'
 import './blocks/bootstrap'
+import './blocks/gallery'
+import './blocks/lightbox'
+import './blocks/menu'
 import './blocks/rutube'
+import './blocks/switcher'
+import './blocks/totop'
 
 console.log('programm running ...')

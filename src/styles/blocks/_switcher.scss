@@ -1,17 +1,18 @@
-// _switcher.scss
-// стили переключателя цветовых тем
+/* switcher.scss - стили переключателя цветовых тем */
 @use "bootstrap" as boot;
 
 .switcher-dropdown {
   display: flex;
   align-items: center;
+}
 
+.icon {
+  width: 1em;
+  height: 1em;
+}
+
+@media (width > 1024px) {
   .icon {
-    width: 1em;
-    height: 1em;
-  }
-
-  @include boot.media-breakpoint-up(lg) {
     margin-bottom: 2px;
   }
 }
@@ -29,6 +30,7 @@
   text-decoration: none;
 
   background-color: transparent;
+
   &::after {
     color: boot.$textcolor;
   }
@@ -42,28 +44,26 @@
   right: 0;
   left: auto;
 
-  min-height: 7rem;
   padding: .125rem;
   border-radius: .5rem;
+}
 
-  li + li {
-    margin-top: .125rem;
+.switcher-dropdown .dropdown-menu li + li {
+  margin-top: .125rem;
+}
+
+.dropdown-item {
+  border-radius: .375rem;
+  color: boot.$darkcolor;
+  &:active {
+    background-color: boot.$accent;
   }
-
-  .dropdown-item {
-    border-radius: .375rem;
-    color: boot.$darkcolor;
-    &:active {
-      background-color: boot.$accent;
-    }
-  }
-
-  .active {
+  &.active {
     font-weight: 700;
     color: boot.$lightcolor;
     background-color: boot.$accent;
     .icon {
-      display: block !important; // stylelint-disable-line declaration-no-important
+      display: block !important;
     }
   }
 }
